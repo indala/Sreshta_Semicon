@@ -37,8 +37,9 @@ export const courses = [
 ];
 
 export const socialLinks = {
-  instagram: "https://www.instagram.com/sreshta_vlsi",
-  linkedin: "https://www.linkedin.com/in/sreshta777",
+  instagram: "https://www.instagram.com/sreshta_vlsi?igsh=MWdxdDE5YXoyMm5vcQ==",
+  linkedin: "www.linkedin.com/in/sreshta-semicon-tech",
+  x: "https://x.com/sreshta_vlsi",
 };
 
 export const contactDetails = {

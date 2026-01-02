@@ -1,7 +1,8 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Calendar, Cpu, CircuitBoard } from "lucide-react";
+import { ArrowRight, Calendar, Cpu, CircuitBoard, Check } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from 'next';
 
@@ -13,32 +14,38 @@ export const metadata: Metadata = {
 const internships = [
   {
     icon: <Cpu className="w-10 h-10 text-primary" />,
-    title: "Design Verification Internship",
-    description: "Dive deep into the world of frontend verification, learning to build robust testbenches and verify complex designs.",
-    programs: [
-      {
-        duration: "4-Week Fundamentals",
-        focus: "Covers the essentials of SystemVerilog and basic testbench development."
-      },
-      {
-        duration: "12-Week Advanced Flow",
-        focus: "A comprehensive program on UVM, coverage closure, and mini industry-aligned projects."
-      }
+    title: "DESIGN VERIFICATION - FRONTEND",
+    fourWeek: [
+        "Fundamentals of Verification & testbench architecture",
+        "Basics of Verilog/SystemVerilog",
+        "Introduction to simulation & debugging",
+        "Hands-on with simple testcases and environments",
+        "Understanding verification workflows used in industry",
+    ],
+    twelveWeek: [
+        "Complete verification flow with SystemVerilog",
+        "Constrained-random testing & functional coverage",
+        "Assertions, debugging & waveform analysis",
+        "Hands-on with advanced testbench components",
+        "Mini-project aligned with industry DV practices",
     ]
   },
   {
     icon: <CircuitBoard className="w-10 h-10 text-primary" />,
-    title: "Physical Design Internship",
-    description: "Understand the complete backend flow, from netlist to GDSII, with hands-on labs and projects.",
-    programs: [
-      {
-        duration: "4-Week Backend Basics",
-        focus: "Introduction to physical design concepts, tools, and basic flow."
-      },
-      {
-        duration: "12-Week Advanced Implementation",
-        focus: "In-depth training on timing closure, physical verification, and creating portfolio-ready projects."
-      }
+    title: "PHYSICAL DESIGN - BACKEND",
+    fourWeek: [
+        "Basics of Physical Design flow",
+        "Floorplanning, Placement & Routing overview",
+        "Intro to CTS & Timing Closure",
+        "Hands-on with beginner-level EDA tools",
+        "Understanding industry workflows & terminology",
+    ],
+    twelveWeek: [
+        "Complete PD flow with deeper module-level work",
+        "Floorplanning → Placement → CTS → Routing → Signoff",
+        "Timing analysis & basic optimization techniques",
+        "Tool-based labs with real design scenarios",
+        "Mini-project for portfolio/placement readiness",
     ]
   },
 ];
@@ -54,6 +61,11 @@ export default function InternshipsPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+                <p className="text-lg text-muted-foreground">
+                    Internships are provided in <strong>ONLINE | OFFLINE | HYBRID</strong> modes.
+                </p>
+            </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {internships.map((internship, index) => (
               <Card key={index} className="flex flex-col hover:shadow-xl transition-shadow duration-300">
@@ -64,20 +76,34 @@ export default function InternshipsPage() {
                     </div>
                     <div>
                         <CardTitle className="text-2xl font-headline">{internship.title}</CardTitle>
-                        <CardDescription className="text-base mt-1">{internship.description}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow space-y-6">
-                  {internship.programs.map((program, i) => (
-                    <div key={i} className="p-4 rounded-lg bg-background">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Calendar className="h-5 w-5 text-primary" />
-                        <h4 className="font-bold text-lg text-foreground">{program.duration}</h4>
-                      </div>
-                      <p className="text-muted-foreground ml-8">{program.focus}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="p-4 rounded-lg bg-background">
+                            <div className="flex items-center gap-3 mb-2">
+                                <Calendar className="h-5 w-5 text-primary" />
+                                <h4 className="font-bold text-lg text-foreground">4-Week Internship</h4>
+                            </div>
+                            <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                                {internship.fourWeek.map((item, i) => (
+                                <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="p-4 rounded-lg bg-background">
+                            <div className="flex items-center gap-3 mb-2">
+                                <Calendar className="h-5 w-5 text-primary" />
+                                <h4 className="font-bold text-lg text-foreground">12-Week Internship</h4>
+                            </div>
+                            <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                                {internship.twelveWeek.map((item, i) => (
+                                <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                  ))}
                 </CardContent>
                 <CardFooter>
                     <Button asChild className="w-full">

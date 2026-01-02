@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 
 import { contactDetails, navLinks, socialLinks, programLinks } from '@/lib/constants';
 import { Logo } from './Logo';
@@ -25,6 +25,11 @@ export function Footer() {
               <Button variant="ghost" size="icon" asChild>
                 <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram className="h-5 w-5" />
+                </a>
+              </Button>
+               <Button variant="ghost" size="icon" asChild>
+                <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" aria-label="X">
+                  <Twitter className="h-5 w-5" />
                 </a>
               </Button>
             </div>

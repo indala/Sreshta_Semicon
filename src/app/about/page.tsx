@@ -1,3 +1,4 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, BookOpen, Eye, Goal } from "lucide-react";
@@ -46,10 +47,7 @@ export default function AboutPage() {
                 Our Company
               </h2>
               <p className="mb-4 text-lg">
-                SRESHTA SEMICON TECHNOLOGIES PVT LTD, located in Visakhapatnam, Andhra Pradesh, is a premier institute for VLSI and semiconductor training. We are dedicated to nurturing the next generation of semiconductor professionals.
-              </p>
-              <p>
-                Our core philosophy is to act as an intellectual bridge, connecting the theoretical knowledge from universities with the practical demands of the high-tech industry. We achieve this through rigorous, hands-on training programs designed and delivered by industry veterans.
+                Sreshta Semicon Technologies Pvt Ltd is a leading VLSI institute in Visakhapatnam, dedicated to closing the gap between classroom learning and industry needs. We offer focused training, internships, and placement programs to equip engineering students with the skills required to thrive in the semiconductor sector.
               </p>
             </MotionSection>
             <div className="grid grid-cols-1 gap-8">
@@ -61,7 +59,7 @@ export default function AboutPage() {
                   </CardHeader>
                   <CardContent>
                     <p>
-                      To be a leading intellectual bridge between universities and the industry, fostering excellence in both VLSI and software domains to create a globally competitive talent pool.
+                      The goal of SRESHTA is to serve as an intellectual bridge connecting highly developed, idealistic industries with a wealth of universities. We aim to establish a point of contact for VLSI & Software training through research and development, industry-focused education programs, and technological contributions.
                     </p>
                   </CardContent>
                 </Card>
@@ -74,7 +72,7 @@ export default function AboutPage() {
                   </CardHeader>
                   <CardContent>
                     <p>
-                      To deliver industry-ready graduates by providing state-of-the-art training through research and development, and by organizing seminars, workshops, and internships that provide real-world experience.
+                      SRESHTA is committed to materialize its vision through its extensive training programs, seminars, internships, and workshops. We are dedicated to realizing its mission and exposing graduates and undergraduates to the industry.
                     </p>
                   </CardContent>
                 </Card>

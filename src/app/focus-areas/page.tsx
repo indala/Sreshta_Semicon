@@ -1,7 +1,12 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Cpu, CircuitBoard, Code, CheckSquare, Layers } from "lucide-react";
+import { Cpu, CircuitBoard, Code, CheckSquare, Layers, Terminal, Binary, PenTool } from "lucide-react";
 import type { Metadata } from 'next';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MotionSection } from "@/components/common/MotionSection";
+import { MotionGrid } from "@/components/common/MotionGrid";
+import { MotionItem } from "@/components/common/MotionItem";
 
 export const metadata: Metadata = {
   title: 'Focus Areas | SRESHTA SEMICON TECHNOLOGIES PVT LTD',
@@ -11,8 +16,8 @@ export const metadata: Metadata = {
 const focusAreas = [
   {
     icon: <Cpu className="h-8 w-8 text-primary" />,
-    title: "VLSI Design Verification (Frontend)",
-    description: "Master the art of ensuring complex chip designs are bug-free and function as intended.",
+    title: "VLSI Design Verification - ASIC Front-End",
+    description: "Expertise in digital RTL implementation, verification simulations, and automated workflows using SystemVerilog, UVM and scripting languages.",
     topics: [
       {
         icon: <Code className="h-5 w-5 text-primary/80" />,
@@ -33,8 +38,8 @@ const focusAreas = [
   },
   {
     icon: <CircuitBoard className="h-8 w-8 text-primary" />,
-    title: "Physical Design (Backend)",
-    description: "Learn to transform a logical chip design into a manufacturable physical layout.",
+    title: "VLSI Physical Design - ASIC Back-End",
+    description: "High-end proficiency in creating optimized chip layouts through strategic floorplanning, refined placement, balanced clock trees and efficient routing.",
     topics: [
       {
         icon: <Code className="h-5 w-5 text-primary/80" />,
@@ -55,8 +60,8 @@ const focusAreas = [
   },
   {
     icon: <Code className="h-8 w-8 text-primary" />,
-    title: "FPGA Design & Development",
-    description: "Gain expertise in creating and implementing digital systems on FPGAs.",
+    title: "FPGA Design and Development",
+    description: "Specialization in creating performance-driven FPGA solutions through efficient coding, timing optimization and resource-aware design strategies.",
     topics: [
       {
         icon: <Code className="h-5 w-5 text-primary/80" />,
@@ -75,6 +80,24 @@ const focusAreas = [
       },
     ]
   }
+];
+
+const prerequisites = [
+    {
+        icon: <Binary className="h-8 w-8 text-primary" />,
+        title: "Digital Electronics",
+        description: "Deep understanding of Digital Electronics as the backbone of VLSI, ensuring accurate logic implementation, scalable architectures, and high-performance silicon solutions.",
+    },
+    {
+        icon: <Terminal className="h-8 w-8 text-primary" />,
+        title: "Linux Operating System",
+        description: "Expertise in leveraging Linux for scalable simulations, synthesis runs, and verification automation—ensuring faster turnaround and enhanced design efficiency.",
+    },
+    {
+        icon: <PenTool className="h-8 w-8 text-primary" />,
+        title: "TCL Scripting Language",
+        description: "Expertise in integrating TCL-driven automation to minimize manual effort, boost design productivity, and ensure consistent, high-quality chip results.",
+    },
 ];
 
 export default function FocusAreasPage() {
@@ -123,6 +146,31 @@ export default function FocusAreasPage() {
           </Accordion>
         </div>
       </section>
+
+      <MotionSection className="py-16 md:py-24 bg-card">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">
+            Prerequisites? We Cover Everything!
+          </h2>
+          <MotionGrid className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {prerequisites.map((prerequisite, index) => (
+                <MotionItem key={index}>
+                    <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                        <CardHeader>
+                        <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
+                            {prerequisite.icon}
+                        </div>
+                        <CardTitle className="text-xl font-headline text-foreground">{prerequisite.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                        <p>{prerequisite.description}</p>
+                        </CardContent>
+                    </Card>
+                </MotionItem>
+            ))}
+          </MotionGrid>
+        </div>
+      </MotionSection>
     </div>
   );
 }

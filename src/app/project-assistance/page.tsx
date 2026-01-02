@@ -1,3 +1,4 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -54,7 +55,7 @@ export default function ProjectAssistancePage() {
               Your Success is Our Goal
             </h2>
             <p className="text-lg">
-              A final-year project is a critical milestone. At SRESHTA SEMICON, we provide comprehensive assistance to ensure your project is not just completed, but is a showcase of your skills and knowledge, preparing you for a successful career.
+              Sreshta offers end-to-end support for final-year academic students, ensuring their projects are industry-aligned and impactful. We guide students from project topic selection to tool setup, debugging, and documentation, helping them build a strong foundation for their careers. Our mentors work closely with students to ensure their projects are not just completed but are also valuable assets for placement.
             </p>
           </div>
 

@@ -1,6 +1,7 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Briefcase, GraduationCap, Laptop } from "lucide-react";
+import { Check, Briefcase, GraduationCap, Laptop, Zap, FolderKanban } from "lucide-react";
 import type { Metadata } from 'next';
 import { MotionSection } from "@/components/common/MotionSection";
 import { MotionGrid } from "@/components/common/MotionGrid";
@@ -14,19 +15,19 @@ export const metadata: Metadata = {
 const programs = [
   {
     icon: <Briefcase className="w-10 h-10 text-primary" />,
-    title: "Training & Placement Program (6 Months)",
-    description: "An intensive program covering core-to-advanced VLSI curriculum, designed to make you industry-ready.",
+    title: "Job-Ready VLSI Training Pathway",
+    description: "Become job-ready with tool-based, hands-on learning.",
     features: [
-      "Tool-based labs and hands-on sessions",
-      "Domain-specific real-time projects",
-      "Comprehensive resume & interview preparation",
-      "Dedicated placement assistance with top companies"
+      "Structured Course Curriculum",
+      "Industry Tool Access, Live code debugging",
+      "Industrial Projects & Protocols",
+      "Placements & Mock Interviews"
     ]
   },
   {
     icon: <GraduationCap className="w-10 h-10 text-primary" />,
-    title: "Internship Programs",
-    description: "Gain practical experience with our 4-week and 12-week internship options in key VLSI domains.",
+    title: "Project-Based Internship Program",
+    description: "Work on real designs under mentor guidance.",
     features: [
       "Specializations in Design Verification & Physical Design",
       "Deep-dive into hands-on, tool-based learning",
@@ -35,9 +36,9 @@ const programs = [
     ]
   },
   {
-    icon: <Laptop className="w-10 h-10 text-primary" />,
-    title: "Corporate Training",
-    description: "Customized training modules for working professionals and organizations to upgrade their skills.",
+    icon: <Zap className="w-10 h-10 text-primary" />,
+    title: "Skill-Boost Workshops",
+    description: "Quick skill-upgrade sessions on industry tools and concepts.",
     features: [
       "Tailored curriculum to meet specific client needs",
       "Focus on client and interview readiness",
@@ -46,9 +47,9 @@ const programs = [
     ]
   },
   {
-    icon: <Check className="w-10 h-10 text-primary" />,
-    title: "Project Assistance",
-    description: "Expert support for final-year academic projects to ensure success and deep learning.",
+    icon: <FolderKanban className="w-10 h-10 text-primary" />,
+    title: "Industry Level Projects",
+    description: "Implement end-to-end projects using real protocols.",
     features: [
       "Guidance on final-year academic support",
       "Complete tool setup and debugging assistance",

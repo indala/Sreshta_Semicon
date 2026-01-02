@@ -1,3 +1,4 @@
+
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,7 +50,7 @@ export default function CorporateTrainingPage() {
               Empowering Your Team for Success
             </h2>
             <p className="text-lg">
-              In the fast-evolving semiconductor industry, continuous learning is key. SRESHTA SEMICON offers bespoke corporate training programs designed to equip your professionals with the advanced skills and practical knowledge needed to stay competitive.
+              Sreshta is a preferred choice for corporate training because we deliver customized, tool-based, and flexible learning solutions. Our programs prepare working professionals for client interviews and challenging projects, helping them drive innovation and achieve their full potential. We provide a complete ecosystem for skill enhancement, including tailored refreshers, interview coaching, and versatile delivery modes to fit any organization’s needs.
             </p>
           </div>
 
