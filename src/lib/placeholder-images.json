@@ -1,0 +1,64 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract background for the hero section",
+      "imageUrl": "/home_hero_img.jpeg",
+      "imageHint": "abstract tech"
+    },
+    {
+      "id": "about-header",
+      "description": "Image for the about us page header",
+      "imageUrl": "/about_hero_img.jpeg",
+      "imageHint": "corporate office"
+    },
+    {
+      "id": "courses-header",
+      "description": "Image for the courses page header",
+      "imageUrl": "/courses_hero_img.jpeg",
+      "imageHint": "education classroom"
+    },
+    {
+      "id": "contact-header",
+      "description": "Image for the contact page header",
+      "imageUrl": "/contact_hero_img.jpeg",
+      "imageHint": "communication technology"
+    },
+    {
+      "id": "focus-header",
+      "description": "Image for the focus areas page header",
+      "imageUrl": "/focus_hero_img.jpeg",
+      "imageHint": "circuit board"
+    },
+    {
+      "id": "internships-header",
+      "description": "Image for the internships page header",
+      "imageUrl": "/internships_hero_img.jpeg",
+      "imageHint": "students collaborating"
+    },
+    {
+      "id": "projects-header",
+      "description": "Image for the projects page header",
+      "imageUrl": "/projects_hero_img.jpeg",
+      "imageHint": "team working"
+    },
+    {
+      "id": "corporate-header",
+      "description": "Image for the corporate training page header",
+      "imageUrl": "/corporate_hero_img.jpeg",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "assistance-header",
+      "description": "Image for the project assistance page header",
+      "imageUrl": "/assistance_hero_img.jpeg",
+      "imageHint": "mentorship guidance"
+    },
+    {
+      "id": "register-header",
+      "description": "Image for the registration page header",
+      "imageUrl": "/register_hero_img.jpeg",
+      "imageHint": "form checklist"
+    }
+  ]
+}
