@@ -52,9 +52,9 @@ export default function AboutPage() {
             </MotionSection>
             <div className="grid grid-cols-1 gap-8">
               <MotionSection delay={0.4} direction="left">
-                <Card className="bg-primary/5 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-primary/70 text-white hover:shadow-lg transition-all duration-300">
                   <CardHeader className="flex-row items-center gap-4">
-                    <Eye className="h-10 w-10 text-primary" />
+                    <Eye className="h-10 w-10 text-gray-700" />
                     <CardTitle className="text-2xl font-headline m-0">Our Vision</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -65,9 +65,9 @@ export default function AboutPage() {
                 </Card>
               </MotionSection>
               <MotionSection delay={0.6} direction="left">
-                <Card className="bg-primary/5 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-primary/70 text-white hover:shadow-lg transition-all duration-300">
                   <CardHeader className="flex-row items-center gap-4">
-                    <Goal className="h-10 w-10 text-primary" />
+                    <Goal className="h-10 w-10 text-gray-700" />
                     <CardTitle className="text-2xl font-headline m-0">Our Mission</CardTitle>
                   </CardHeader>
                   <CardContent>

@@ -5,6 +5,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ArrowRight, Calendar, Cpu, CircuitBoard, Check } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from 'next';
+import { MotionSection } from "@/components/common/MotionSection";
+import { MotionGrid } from "@/components/common/MotionGrid";
+import { MotionItem } from "@/components/common/MotionItem";
 
 export const metadata: Metadata = {
   title: 'Internships | SRESHTA SEMICON TECHNOLOGIES PVT LTD',
@@ -59,64 +62,66 @@ export default function InternshipsPage() {
         imageId="internships-header"
       />
 
-      <section className="py-16 md:py-24">
+      <MotionSection className="py-16 md:py-24">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <p className="text-lg text-muted-foreground">
                     Internships are provided in <strong>ONLINE | OFFLINE | HYBRID</strong> modes.
                 </p>
             </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <MotionGrid className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {internships.map((internship, index) => (
-              <Card key={index} className="flex flex-col hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                     <div className="bg-primary/10 p-3 rounded-lg">
-                        {internship.icon}
+              <MotionItem key={index}>
+                <Card className="flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                       <div className="bg-primary/10 p-3 rounded-lg">
+                          {internship.icon}
+                      </div>
+                      <div>
+                          <CardTitle className="text-2xl font-headline">{internship.title}</CardTitle>
+                      </div>
                     </div>
-                    <div>
-                        <CardTitle className="text-2xl font-headline">{internship.title}</CardTitle>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="p-4 rounded-lg bg-background">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Calendar className="h-5 w-5 text-primary" />
-                                <h4 className="font-bold text-lg text-foreground">4-Week Internship</h4>
-                            </div>
-                            <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
-                                {internship.fourWeek.map((item, i) => (
-                                <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="p-4 rounded-lg bg-background">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Calendar className="h-5 w-5 text-primary" />
-                                <h4 className="font-bold text-lg text-foreground">12-Week Internship</h4>
-                            </div>
-                            <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
-                                {internship.twelveWeek.map((item, i) => (
-                                <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </CardContent>
-                <CardFooter>
-                    <Button asChild className="w-full">
-                        <Link href="/register">Register for Internship <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                    </Button>
-                </CardFooter>
-              </Card>
+                  </CardHeader>
+                  <CardContent className="flex-grow space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="p-4 rounded-lg bg-background">
+                              <div className="flex items-center gap-3 mb-2">
+                                  <Calendar className="h-5 w-5 text-primary" />
+                                  <h4 className="font-bold text-lg text-foreground">4-Week Internship</h4>
+                              </div>
+                              <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                                  {internship.fourWeek.map((item, i) => (
+                                  <li key={i}>{item}</li>
+                                  ))}
+                              </ul>
+                          </div>
+                          <div className="p-4 rounded-lg bg-background">
+                              <div className="flex items-center gap-3 mb-2">
+                                  <Calendar className="h-5 w-5 text-primary" />
+                                  <h4 className="font-bold text-lg text-foreground">12-Week Internship</h4>
+                              </div>
+                              <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                                  {internship.twelveWeek.map((item, i) => (
+                                  <li key={i}>{item}</li>
+                                  ))}
+                              </ul>
+                          </div>
+                      </div>
+                  </CardContent>
+                  <CardFooter>
+                      <Button asChild className="w-full">
+                          <Link href="/register">Register for Internship <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                      </Button>
+                  </CardFooter>
+                </Card>
+              </MotionItem>
             ))}
-          </div>
+          </MotionGrid>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="py-16 md:py-24 bg-card">
+      <MotionSection className="py-16 md:py-24 bg-card">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold font-headline mb-4">Ready to Launch Your Career?</h2>
             <p className="max-w-2xl mx-auto text-lg mb-8">
@@ -126,7 +131,7 @@ export default function InternshipsPage() {
                 <Link href="/contact">Contact Admissions</Link>
             </Button>
           </div>
-      </section>
+      </MotionSection>
     </div>
   );
 }

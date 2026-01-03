@@ -18,7 +18,7 @@ export default function ContactPage() {
     <div>
       <PageHeader
         title="Contact Us"
-        description="We're here to help. Reach out to us with any questions or inquiries."
+        description="We\'re here to help. Reach out to us with any questions or inquiries."
         imageId="contact-header"
       />
 
@@ -92,7 +92,7 @@ export default function ContactPage() {
 
 function InfoCard({ icon, title, content }: { icon: React.ReactNode, title: string, content: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-4">
+    <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-primary/5 transition-colors">
       <div className="bg-primary/10 p-3 rounded-lg mt-1">
         {icon}
       </div>
