@@ -1,105 +1,39 @@
-import { PageHeader } from "@/components/common/PageHeader";
-import { ContactForm } from "@/components/forms/ContactForm";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { contactDetails, socialLinks } from "@/lib/constants";
-import { Mail, MapPin, Phone, Instagram, Linkedin } from "lucide-react";
-import type { Metadata } from 'next';
-import { MotionSection } from "@/components/common/MotionSection";
-import { MotionGrid } from "@/components/common/MotionGrid";
-import { MotionItem } from "@/components/common/MotionItem";
 
-export const metadata: Metadata = {
-  title: 'Contact Us | SRESHTA SEMICON TECHNOLOGIES PVT LTD',
-  description: 'Get in touch with SRESHTA SEMICON for course inquiries, corporate training, or any other questions. We are here to help.',
-};
+import ContactFormSection from "@/components/contact/ContactFormSection";
+import ContactInfo from "@/components/contact/ContactInfo";
+import Header from "@/components/contact/Header";
+import { MotionSection } from "@/components/common/MotionSection";
 
 export default function ContactPage() {
   return (
     <div>
-      <PageHeader
-        title="Contact Us"
-        description="We\'re here to help. Reach out to us with any questions or inquiries."
-        imageId="contact-header"
-      />
-
+      <Header />
       <MotionSection className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <MotionSection delay={0.2} direction="right">
-                <h2 className="text-3xl font-bold font-headline mb-6">Get in Touch</h2>
-              </MotionSection>
-              <MotionGrid staggerDelay={0.1} className="space-y-6">
-                <MotionItem>
-                  <InfoCard
-                    icon={<Phone className="h-6 w-6 text-primary" />}
-                    title="Phone"
-                    content={
-                      <>
-                        <a href={`tel:${contactDetails.phone1}`} className="block hover:underline">{contactDetails.phone1}</a>
-                        <a href={`tel:${contactDetails.phone2}`} className="block hover:underline">{contactDetails.phone2}</a>
-                      </>
-                    }
-                  />
-                </MotionItem>
-                <MotionItem>
-                  <InfoCard
-                    icon={<Mail className="h-6 w-6 text-primary" />}
-                    title="Email"
-                    content={<a href={`mailto:${contactDetails.email}`} className="hover:underline">{contactDetails.email}</a>}
-                  />
-                </MotionItem>
-                <MotionItem>
-                  <InfoCard
-                    icon={<MapPin className="h-6 w-6 text-primary" />}
-                    title="Address"
-                    content={<p>{contactDetails.address}</p>}
-                  />
-                </MotionItem>
-                <MotionItem>
-                  <InfoCard
-                    icon={<Linkedin className="h-6 w-6 text-primary" />}
-                    title="LinkedIn"
-                    content={<a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline">Follow us on LinkedIn</a>}
-                  />
-                </MotionItem>
-                <MotionItem>
-                  <InfoCard
-                    icon={<Instagram className="h-6 w-6 text-primary" />}
-                    title="Instagram"
-                    content={<a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:underline">@{socialLinks.instagram.split('/').pop()}</a>}
-                  />
-                </MotionItem>
-              </MotionGrid>
-            </div>
-
-            <MotionSection delay={0.4} direction="left">
-              <Card className="p-4 md:p-6 hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-headline">Send us a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ContactForm />
-                </CardContent>
-              </Card>
-            </MotionSection>
+            <ContactInfo />
+            <ContactFormSection />
           </div>
         </div>
       </MotionSection>
-    </div>
-  );
-}
-
-function InfoCard({ icon, title, content }: { icon: React.ReactNode, title: string, content: React.ReactNode }) {
-  return (
-    <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-primary/5 transition-colors">
-      <div className="bg-primary/10 p-3 rounded-lg mt-1">
-        {icon}
-      </div>
-      <div>
-        <h3 className="font-bold text-lg text-foreground">{title}</h3>
-        <div className="text-muted-foreground">{content}</div>
-      </div>
+      <MotionSection className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">
+            Our Location
+          </h2>
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3796.1800723719853!2d83.4216353751774!3d17.92375318305785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDU1JzI1LjUiTiA4M8KwMjUnMjcuMiJF!5e0!3m2!1sen!2sin!4v1767550954080!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </MotionSection>
     </div>
   );
 }

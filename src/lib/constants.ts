@@ -1,50 +1,328 @@
-
 export const navLinks = [
-  { href: "/home", label: "Home" },
-  { href: "/about", label: "About Us" },
-];
-
-export const programLinks = [
-  { href: "/courses", label: "Courses & Programs" },
-  { href: "/focus-areas", label: "Focus Areas" },
-  { href: "/internships", label: "Internships" },
-  { href: "/projects", label: "Projects" },
-  { href: "/corporate-training", label: "Corporate Training" },
-  { href: "/project-assistance", label: "Project Assistance" },
-]
-
-export const courses = [
-  {
-    title: "Design Verification",
-    description: "Master SystemVerilog & UVM for comprehensive chip verification.",
-    link: "/focus-areas",
-  },
-  {
-    title: "Physical Design",
-    description: "From floorplanning to signoff, learn the complete backend flow.",
-    link: "/focus-areas",
-  },
-  {
-    title: "FPGA Design",
-    description: "Implement complex digital systems on FPGAs using Vivado/Quartus.",
-    link: "/focus-areas",
-  },
-  {
-    title: "Training & Placement Program (6 Months)",
-    description: "A comprehensive program covering core to advanced VLSI topics with placement assistance.",
-    link: "/courses",
-  }
-];
-
-export const socialLinks = {
-  instagram: "https://www.instagram.com/sreshta_vlsi?igsh=MWdxdDE5YXoyMm5vcQ==",
-  linkedin: "www.linkedin.com/in/sreshta-semicon-tech",
-  x: "https://x.com/sreshta_vlsi",
-};
-
-export const contactDetails = {
-  phone1: "7801009777",
-  phone2: "9618046555",
-  email: "sreshtasemicon@gmail.com",
-  address: "Visakhapatnam, Andhra Pradesh",
-};
+   { href: "/home", label: "Home" },
+   { href: "/about", label: "About Us" },
+  ];
+  
+  export const programLinks = [
+   { href: "/courses", label: "Courses & Programs" },
+   { href: "/focus-areas", label: "Focus Areas" },
+   { href: "/internships", label: "Internships" },
+   { href: "/projects", label: "Projects" },
+   { href: "/corporate-training", label: "Corporate Training" },
+   { href: "/project-assistance", label: "Project Assistance" },
+  ];
+  
+  export const courses = [
+   {
+    title: "VLSI Training & Placement Program (6 Months)",
+    slug: "vlsi-training-placement",
+    category: "Hardware Courses",
+    description: "Master the full ASIC flow: Front-End Verification (UVM/SV) and Back-End Physical Design (PD).",
+    modules: [
+          // --- Design Verification (ASIC Front-End) ---
+      { title: "Module 1 — ASIC Design Flow & RTL Design", overview: "Introduction to HDL, abstraction levels, combinational/sequential circuit design, FSM, and I2C/AXI protocol implementation." },
+      { title: "Module 2 — System Verilog for Verification", overview: "SV enhancements, basic to advanced OOPs, constrained driven randomization, interfaces, and SV testbench development." },
+      { title: "Module 3 — Universal Verification Methodology (UVM)", overview: "Introduction to UVM, factory registration, phases, sequence items, UVM agent-driven testbench development (e.g., Router 1*3 verification)." },
+      { title: "Module 4 — System Verilog Assertions (SVA) & Coverage", overview: "Immediate vs. concurrent assertions, operators, properties, sequences, functional coverage, covergroup, and cross coverage." },
+          // --- Physical Design (ASIC Back-End) ---
+      { title: "Module 5 — CMOS & Technology Fundamentals", overview: "MOSFET basics, CMOS circuits, layout fundamentals, and IC fabrication overview." },
+      { title: "Module 6 — Synthesis & Physical Design Flow", overview: "RTL to Gate-level conversion, SDC constraints, LEC, and an overview of the complete Physical Design flow." },
+      { title: "Module 7 — Floorplanning & Macro Placement", overview: "Defining die/core area, macro placement, power planning, and Quality of Results (QOR) checks." },
+      { title: "Module 8 — Placement & Optimization", overview: "Standard-cell placement, optimization, congestion reduction, and placement quality checks." },
+      { title: "Module 9 — Clock Tree Synthesis (CTS)", overview: "Balanced clock distribution, skew, latency, insertion delay control, CTS rules, exceptions, and Non-Default Rules (NDRs)." },
+      { title: "Module 10 — Routing & Post-Routing Optimization", overview: "Global & detailed routing, constraints, fixing routing violations, and final optimizations." },
+      { title: "Module 11 — Static Timing Analysis (STA) & Signoff", overview: "Timing paths, clock variations, fixing violations, timing closure, Physical Verification (DRC, LVS, IR drop), and Signal Integrity." }
+    ]
+   },
+   {
+    title: "Hardware–Software Co-Design in PCB",
+    slug: "hardware-software-co-design",
+    category: "Hardware Courses",
+    description: "Understand how hardware and software interact within a unified PCB design workflow.",
+    modules: [
+     { title: "Module 1 — Introduction to Hardware–Software Co-Design", overview: "Understand how hardware and software interact within a unified PCB design workflow." },
+     { title: "Module 2 — Electronic Components and Circuit Fundamentals", overview: "Learn essential circuit principles, active and passive components, and signal behavior." },
+     { title: "Module 3 — PCB Design Principles and Workflow", overview: "Explore schematic design, layout routing, and industry-standard PCB workflows." },
+     { title: "Module 4 — Microcontroller Selection and Integration", overview: "Learn to choose and integrate the right microcontroller for your hardware design." },
+     { title: "Module 5 — Embedded Firmware Development", overview: "Write and debug firmware that communicates directly with hardware layers." },
+     { title: "Module 6 — Simulation, Testing, and Debugging", overview: "Simulate designs, test PCB logic, and troubleshoot performance bottlenecks." },
+     { title: "Module 7 — System-Level Hardware–Software Integration", overview: "Integrate firmware, sensors, and peripherals into a unified system design." },
+     { title: "Module 8 — Final Project and Design Documentation", overview: "Apply all learned principles in a full PCB project with complete documentation." }
+    ]
+   },
+   {
+    title: "Embedded Systems Design and Development",
+    slug: "embedded-systems-design",
+    category: "Hardware Courses",
+    description: "A comprehensive training program on embedded systems design and development.",
+    modules: [
+     { title: "Module 1 — Fundamentals of Embedded Systems", overview: "Understand embedded system concepts, components, and design flow." },
+     { title: "Module 2 — Basic Electronics and Microprocessor Basics", overview: "Learn digital electronics and microcontroller fundamentals." },
+     { title: "Module 3 — Microcontroller Architecture and Programming", overview: "Explore common MCU architectures and learn low-level programming." },
+     { title: "Module 4 — Embedded C and Firmware Development", overview: "Master embedded C for device drivers and optimized firmware." },
+     { title: "Module 5 — Sensors and Actuators", overview: "Understand interfacing and practical applications of sensors and actuators." },
+     { title: "Module 6 — Interfacing and Peripheral Communication", overview: "Interface digital and analog peripherals using UART, SPI, and I2C." },
+     { title: "Module 7 — Embedded System Design with RTOS", overview: "Implement multitasking and real-time synchronization using RTOS." },
+     { title: "Module 8 — PCB Design for Embedded Systems", overview: "Learn schematic design, grounding, and fabrication principles for embedded PCBs." },
+     { title: "Module 9 — Communication and Networking in Embedded Systems", overview: "Explore IoT and wireless communication fundamentals in embedded systems." },
+     { title: "Module 10 — Project Design and Development", overview: "Build, integrate, and validate a complete embedded hardware–software system." }
+    ]
+   },
+   {
+    title: "Advanced Embedded System Using IoT",
+    slug: "advanced-embedded-iot",
+    category: "Hardware Courses",
+    description: "Learn to build advanced IoT systems using embedded technologies.",
+    modules: [
+     { title: "Module 1 — Introduction to IoT and Embedded Systems", overview: "Learn IoT architecture, ecosystem, and the role of embedded systems." },
+     { title: "Module 2 — Sensors, Actuators, and Data Acquisition", overview: "Interface sensors and actuators for real-world IoT applications." },
+     { title: "Module 3 — Microcontroller Platforms for IoT", overview: "Work with IoT boards such as ESP32, NodeMCU, and Raspberry Pi." },
+     { title: "Module 4 — Embedded C and IoT Firmware Programming", overview: "Develop firmware to read, process, and transmit sensor data." },
+     { title: "Module 5 — Communication Protocols in IoT", overview: "Learn wireless and IoT protocols like MQTT, HTTP, and CoAP." },
+     { title: "Module 6 — Cloud and IoT Platforms", overview: "Integrate devices with cloud platforms such as Blynk, ThingSpeak, and AWS IoT." },
+     { title: "Module 7 — IoT Networking and Security Basics", overview: "Understand IoT networking concepts, data transfer, and basic security." },
+     { title: "Module 8 — IoT System Design and Integration", overview: "Combine sensors, microcontrollers, and cloud systems into a full IoT design." },
+     { title: "Module 9 — IoT Applications and Use Cases", overview: "Explore real-world IoT examples such as smart homes, industry, and healthcare." },
+     { title: "Module 10 — Final Project and Evaluation", overview: "Design and present a complete IoT prototype with documentation." }
+    ]
+   },
+   {
+    title: "Raspberry Pi–Based Embedded Systems",
+    slug: "raspberry-pi-embedded-systems",
+    category: "Hardware Courses",
+    description: "A training program on building embedded systems using Raspberry Pi.",
+    modules: [
+      { title: "Module 1 — Introduction to Embedded Systems and Raspberry Pi", overview: "Learn Raspberry Pi architecture, GPIO, and system setup." },
+      { title: "Module 2 — Keil µVision and Embedded C Basics", overview: "Develop embedded C programs using Keil and simulate I/O operations." },
+      { title: "Module 3 — Linux Fundamentals for Embedded Development", overview: "Master Linux basics, SSH, and system maintenance for Pi." },
+      { title: "Module 4 — Python Programming for Embedded Applications", overview: "Use Python libraries to control GPIO and interact with sensors." },
+      { title: "Module 5 — Sensor and Actuator Interfacing", overview: "Connect sensors, ADCs, and actuators for data acquisition." },
+      { title: "Module 6 — Communication Interfaces and Protocols", overview: "Implement UART, SPI, I2C, and USB communication." },
+      { title: "Module 7 — Networking and IoT Integration", overview: "Build connected systems using MQTT, ThingSpeak, and Blynk." },
+      { title: "Module 8 — Image Processing and Computer Vision", overview: "Apply OpenCV for image capture, motion tracking, and edge AI." },
+      { title: "Module 9 — System Design and Optimization", overview: "Optimize power, performance, and integration with controllers." },
+      { title: "Module 10 — Final Project and Evaluation", overview: "Build and demonstrate a complete embedded IoT project." }
+    ]
+   },
+    // --- NEW COURSE ADDED ---
+   {
+    title: "FPGA Design and Development",
+    slug: "fpga-design-development",
+    category: "Hardware Courses",
+    description: "Specialization in creating performance-driven FPGA solutions through efficient coding, timing optimization, and resource-aware design strategies.",
+    modules: [
+      { title: "Module 1 — Basics & Digital Electronics Fundamentals", overview: "Logic gates, combinational & sequential circuits, registers, counters, FSM, and timing basics." },
+      { title: "Module 2 — FPGA Foundations & Architecture", overview: "FPGA architecture (LUT, FF, DSP, BRAM), board components, clock, and reset fundamentals." },
+      { title: "Module 3 — Verilog HDL Training", overview: "Syntax, operators, always blocks, blocking vs Non-blocking, FSM, pipelining, tasks, and functions." },
+      { title: "Module 4 — Simulation & Testbench Development", overview: "Writing testbenches, waveform analysis, and functional verification." },
+      { title: "Module 5 — FPGA Tool Flow & Constraints", overview: "Vivado/Quartus usage, RTL synthesis, implementation, bitstream generation, SDC/XDC basics, and timing exceptions." },
+      { title: "Module 6 — Hardware Programming & Debugging", overview: "Board programming, ILA/VIO usage, and debugging RTL and timing issues." },
+      { title: "Module 7 — FPGA IP Integration & Protocol Implementation", overview: "BRAM, FIFO, Clock Wizard, GPIO, AXI-lite basics, and implementing protocols like UART, SPI, I2C, VGA, ADC/DAC." },
+      { title: "Module 8 — System-Level Design & Projects", overview: "Processor integration (MicroBlaze/Nios), hardware–software co-design, multiclock design, and real-time internship projects." }
+    ]
+   },
+   {
+    title: "Python Full Stack",
+    slug: "python-full-stack",
+    category: "Software Courses",
+    description: "Become a Python Full Stack Developer from scratch.",
+    modules: [
+      { title: "Module 1 — Computer basics & learning environment", overview: "How to use Colab/Replit, GitHub basics, and development workflow." },
+      { title: "Module 2 — Python fundamentals: types & control flow", overview: "Variables, data types, conditionals, and loops." },
+      { title: "Module 3 — Functions, modules & basic OOP", overview: "Defining functions, modules, simple classes and code organization." },
+      { title: "Module 4 — File I/O, virtualenv concepts & pip", overview: "Reading/writing files, package management and environment isolation concepts." },
+      { title: "Module 5 — Web fundamentals: HTTP & REST", overview: "Requests/responses, JSON, REST principles and API contracts." },
+      { title: "Module 6 — HTML fundamentals", overview: "Page structure, semantic tags and building a static page." },
+      { title: "Module 7 — CSS basics & layout", overview: "Styling, box model, flexbox and responsive basics." },
+      { title: "Module 8 — JavaScript basics & DOM", overview: "Basic JS syntax, DOM manipulation and connecting frontend to backend." },
+      { title: "Module 9 — Flask fundamentals: routes & templates", overview: "Building routes, rendering templates and simple app structure." },
+      { title: "Module 10 — Forms, validation & sessions", overview: "Handling forms, validation patterns and session-based auth." },
+      { title: "Module 11 — Databases: SQLite & SQLAlchemy", overview: "CRUD operations, ORM basics and migrations concept." },
+      { title: "Module 12 — Building & consuming REST APIs", overview: "API endpoints, JSON responses, and client consumption patterns." },
+      { title: "Module 13 — Async basics & background tasks", overview: "Async IO concepts and simple background worker patterns." },
+      { title: "Module 14 — Testing & basic security hygiene", overview: "Unit tests, input validation, and common security checks." },
+      { title: "Module 15 — Deployment patterns (free hosting)", overview: "Free deployment options (frontend on GitHub Pages/Netlify, backend via free tiers or instructor-hosted)." },
+      { title: "Module 16 — Capstone: Deployed CRUD app", overview: "Final deployable project with auth, README and demo video." }
+    ]
+   },
+   {
+    title: "Java Full Stack",
+    slug: "java-full-stack",
+    category: "Software Courses",
+    description: "Become a Java Full Stack Developer from scratch.",
+    modules: [
+      { title: "Module 1 — Computer basics & Java toolchain", overview: "Install OpenJDK, IDE/VS Code basics and Java dev workflow." },
+      { title: "Module 2 — Java syntax & control flow", overview: "Primitives, conditionals and loops." },
+      { title: "Module 3 — OOP in Java", overview: "Classes, inheritance, interfaces and encapsulation." },
+      { title: "Module 4 — Collections & Streams", overview: "Lists, maps, sets and basic stream operations." },
+      { title: "Module 5 — Build tools & project structure", overview: "Maven/Gradle concepts and project organization." },
+      { title: "Module 6 — HTTP fundamentals & servlets concept", overview: "Request/response lifecycle and simple servlet idea." },
+      { title: "Module 7 — Spring Boot: controllers & endpoints", overview: "Bootstrapping Spring Boot app and building REST controllers." },
+      { title: "Module 8 — Services & dependency injection", overview: "Service layer patterns and DI basics." },
+      { title: "Module 9 — Persistence: JPA/H2 / in-memory DB", overview: "Entities, repositories and basic persistence." },
+      { title: "Module 10 — REST design & DTOs", overview: "API contracts, DTO patterns and error handling." },
+      { title: "Module 11 — Frontend integration basics", overview: "Serving static frontends and simple client-server integration." },
+      { title: "Module 12 — Testing & debugging (JUnit)", overview: "Unit tests, basic integration tests and debugging techniques." },
+      { title: "Module 13 — Security basics (Spring Security intro)", overview: "Authentication/authorization concepts and Spring Security overview." },
+      { title: "Module 14 — Packaging & CI basics", overview: "Building jars, running apps and simple GitHub Actions pipeline." },
+      { title: "Module 15 — Capstone implementation", overview: "Final Spring Boot app with authentication, REST APIs, and deployment." }
+    ]
+   },
+   {
+    title: "Data Science and Machine Learning",
+    slug: "data-science-ml",
+    category: "Software Courses",
+    description: "Master Data Science and Machine Learning concepts from the ground up.",
+    modules: [
+      { title: "Module 1 — Environment & Python for DS (Colab)", overview: "Colab usage, numpy intro and data basics." },
+      { title: "Module 2 — Numpy & array manipulations", overview: "Numpy arrays, broadcasting and vector operations." },
+      { title: "Module 3 — Pandas: Series & DataFrame", overview: "Data structures, indexing and basic transformations." },
+      { title: "Module 4 — Data cleaning & missing values", overview: "Handling missing data, type conversions and cleaning pipelines." },
+      { title: "Module 5 — EDA & visualization basics", overview: "Plotting, summary statistics and exploratory workflows." },
+      { title: "Module 6 — Statistics fundamentals", overview: "Mean/median/variance, distributions and practical stats." },
+      { title: "Module 7 — Probability & hypothesis testing", overview: "Probability basics and testing hypotheses." },
+      { title: "Module 8 — Regression fundamentals", overview: "Linear regression, loss functions and metrics." },
+      { title: "Module 9 — Classification basics", overview: "Logistic regression, metrics and model selection." },
+      { title: "Module 10 — Trees & ensemble intuition", overview: "Decision trees, random forest and boosting concepts." },
+      { title: "Module 11 — Model evaluation & CV", overview: "Cross-validation, overfitting and model comparison." },
+      { title: "Module 12 — Feature engineering basics", overview: "Feature transforms, categorical handling and pipelines." },
+      { title: "Module 13 — Unsupervised methods (PCA, k-means)", overview: "Clustering, dimensionality reduction and use cases." },
+      { title: "Module 14 — scikit-learn workflows & pipelines", overview: "Pipelines, hyperparameter tuning and model persistence." },
+      { title: "Module 15 — Intro to deep learning basics", overview: "Neural net intuition and simple Keras examples." },
+      { title: "Module 16 — Model deployment basics (Streamlit/Flask)", overview: "Wrapping models for inference and demoing outputs." },
+      { title: "Modules 17–20 — Project & presentation", overview: "End-to-end project, reproducible notebooks and final presentation." }
+    ]
+   },
+   {
+    title: "Python for AI and Deep Learning",
+    slug: "python-ai-deep-learning",
+    category: "Software Courses",
+    description: "An advanced course on using Python for Artificial Intelligence and Deep Learning.",
+    modules: [
+      { title: "Module 1 — Python & math refresh", overview: "Python recap and vectors/matrix basics." },
+      { title: "Module 2 — Linear algebra & calculus intuition", overview: "Dot products, gradients and intuition for optimization." },
+      { title: "Module 3 — Neural network fundamentals", overview: "Perceptrons, activations and forward/backprop intuition." },
+      { title: "Module 4 — PyTorch/TensorFlow basics in Colab", overview: "Tensors, auto-diff and basic training loop." },
+      { title: "Module 5 — MLP project", overview: "Build/train a simple multilayer perceptron." },
+      { title: "Module 6 — CNN fundamentals", overview: "Convolutions, pooling and small vision examples." },
+      { title: "Module 7 — Transfer learning & pretrained models", overview: "Fine-tuning pretrained networks for small datasets." },
+      { title: "Module 8 — RNN / sequence basics", overview: "RNN intuition and simple sequence tasks." },
+      { title: "Module 9 — Transformers intro & Hugging Face basics", overview: "Transformer intuition and using Hugging Face pipelines." },
+      { title: "Module 10 — Data pipeline & augmentation", overview: "Loaders, augmentations and batching best practices." },
+      { title: "Module 11 — Training practices & debugging", overview: "Loss curves, checkpoints and troubleshooting." },
+      { title: "Module 12 — Model optimization & inference basics", overview: "Quantization, export formats and simple inference demos." },
+      { title: "Modules 13–16 — Project work & demo", overview: "Image or text classifier end-to-end with notebook + demo." }
+    ]
+   },
+   {
+    title: "Automation and Scripting using Python",
+    slug: "python-automation-scripting",
+    category: "Software Courses",
+    description: "Learn to automate and script tasks using Python.",
+    modules: [
+      { title: "Module 1 — Python recap & environment", overview: "Quick Python fundamentals and scripting workflow." },
+      { title: "Module 2 — OS & filesystem automation", overview: "pathlib, subprocess and file manipulation." },
+      { title: "Module 3 — CSV/Excel automation & data parsing", overview: "pandas for tabular automation and scheduled reports." },
+      { title: "Module 4 — Web requests & APIs", overview: "requests, JSON handling and API automation patterns." },
+      { title: "Module 5 — Web scraping basics", overview: "BeautifulSoup, polite scraping and robots.txt awareness." },
+      { title: "Module 6 — Browser automation (Playwright/Selenium)", overview: "Headless automation and common automation tasks." },
+      { title: "Module 7 — Scheduling & lightweight CI", overview: "cron basics and GitHub Actions for scheduled runs." },
+      { title: "Modules 8–10 — Final automation project", overview: "Build, document and demo an end-to-end automation pipeline." }
+    ]
+   },
+   {
+    title: "Web Development with Python and Django",
+    slug: "python-django-web-dev",
+    category: "Software Courses",
+    description: "A complete guide to web development with Python and Django.",
+    modules: [
+      { title: "Module 1 — HTML basics", overview: "Tags, semantics and page structure." },
+      { title: "Module 2 — CSS basics & layout", overview: "Styling, box model and responsive layout." },
+      { title: "Module 3 — JavaScript basics & DOM", overview: "Client-side scripting and DOM manipulation." },
+      { title: "Module 4 — HTTP & REST basics", overview: "Requests, responses and API basics." },
+      { title: "Module 5 — Python basics refresher", overview: "Python essentials needed for Django." },
+      { title: "Module 6 — Django project & app structure", overview: "Creating projects, apps and routing." },
+      { title: "Module 7 — Models, migrations & admin", overview: "Models, ORM and Django admin usage." },
+      { title: "Module 8 — Views, templates & forms", overview: "Rendering pages, handling forms and validation." },
+      { title: "Module 9 — Authentication & permissions", overview: "User auth flows, login, logout and permission handling." },
+      { title: "Module 10 — Django REST Framework basics", overview: "Serializers, viewsets and API endpoints." },
+      { title: "Module 11 — Frontend integration (HTMX/React basics)", overview: "Connecting Django APIs to modern frontend patterns." },
+      { title: "Modules 12–14 — Deployment & capstone", overview: "Static/media handling, Gunicorn/Nginx concepts or instructor-hosted demo, final deployed app." }
+    ]
+   },
+   {
+    title: "Cyber Security",
+    slug: "cyber-security",
+    category: "Software Courses",
+    description: "An in-depth course on Cyber Security principles and practices.",
+    modules: [
+      { title: "Module 1 — Introduction & Ethical Foundations", overview: "Course orientation, cyber-security mindset, ethics, rules of engagement, and legal boundaries." },
+      { title: "Module 2 — Networking Fundamentals", overview: "IP/TCP/UDP/DNS/HTTP basics and simple packet/traffic interpretation." },
+      { title: "Module 3 — Operating Systems & Lab Access", overview: "Windows vs Linux fundamentals, safe lab setup, terminal basics, and VM/browser-lab access rules." },
+      { title: "Module 4 — Python Scripting for Security", overview: "Basic Python in Colab/Replit for parsing scan outputs, simple automation and helper scripts." },
+      { title: "Module 5 — Footprinting & OSINT", overview: "Passive & active reconnaissance, Google dorking, whois, and OSINT tool workflows." },
+      { title: "Module 6 — Scanning & Enumeration", overview: "Nmap theory, interpreting scan output, and enumeration techniques (SMB/HTTP/LDAP)." },
+      { title: "Module 7 — Vulnerability Assessment & CVE workflow", overview: "Identifying vulnerabilities, CVE lookup, CVSS scoring, and prioritization." },
+      { title: "Module 8 — System Hacking Basics (safe, browser labs)", overview: "Password attack concepts, exploitation workflow, and responsible exploitation via TryHackMe." },
+      { title: "Module 9 — Web Application Security (OWASP)", overview: "OWASP Top10 overview and hands-on PortSwigger/Juice Shop exercises." },
+      { title: "Module 10 — Burp Suite & Web Exploitation Practice", overview: "Burp Community concepts (proxy/repeater) and PortSwigger lab mapping." },
+      { title: "Module 11 — Privilege Escalation Fundamentals", overview: "Post-exploit enumeration and privilege escalation theory (Linux & Windows basics)." },
+      { title: "Module 12 — Malware, Trojans & Static Analysis Concepts", overview: "Malware types, safe/static analysis methods, detection basics (no live malware execution)." },
+      { title: "Module 13 — Wireless & Social Engineering Basics", overview: "Wi-Fi attack surface concepts, phishing basics and awareness design." },
+      { title: "Module 14 — Detection, Logging & Defensive Awareness", overview: "Log basics (syslog/Windows event), IDS/AV concepts, and how defenders detect attackers." },
+      { title: "Module 15 — Reporting & Career Paths", overview: "Writing professional pentest reports (executive summary, CVSS, remediation) and career guidance." },
+      { title: "Module 16 — Capstone CTF & Final Deliverables", overview: "Multi-stage CTF (TryHackMe/hosted) plus final pentest report." }
+    ]
+   },
+   {
+    title: "Data Analytics",
+    slug: "data-analytics",
+    category: "Software Courses",
+    description: "Learn Data Analytics from the ground up.",
+    modules: [
+      { title: "Module 1 — Excel / Google Sheets basics", overview: "Spreadsheets, formulas and pivot basics." },
+      { title: "Module 2 — SQL fundamentals (SQLite)", overview: "SELECT, WHERE, JOIN and aggregation." },
+      { title: "Module 3 — Python for analytics (pandas)", overview: "DataFrames, grouping and transforms." },
+      { title: "Module 4 — Data cleaning & joins", overview: "Cleaning pipelines and merging datasets." },
+      { title: "Module 5 — Visualization basics (matplotlib/plotly)", overview: "Charts, dashboards and story-driven visuals." },
+      { title: "Module 6 — Exploratory workflows & KPIs", overview: "EDA process, KPIs and business questions." },
+      { title: "Module 7 — Dashboarding (Google Data Studio)", overview: "Building interactive dashboards and filters." },
+      { title: "Module 8 — Time series & aggregation", overview: "Trends, resampling and rolling metrics." },
+      { title: "Module 9 — Basic stats & sampling", overview: "Sampling, significance and basic tests." },
+      { title: "Modules 10–12 — Business case project & presentation", overview: "Build a dashboard, SQL notebook and present insights." }
+    ]
+   },
+   {
+    title: "Cloud Computing",
+    slug: "cloud-computing",
+    category: "Software Courses",
+    description: "A course on the fundamentals of Cloud Computing.",
+    modules: [
+      { title: "Module 1 — Cloud fundamentals & models", overview: "IaaS/PaaS/SaaS, regions, availability zones and core services." },
+      { title: "Module 2 — Linux & networking refresher", overview: "SSH, ports, basic routing and subnet ideas." },
+      { title: "Module 3 — Local emulators (LocalStack) intro", overview: "Simulating S3/Lambda and testing cloud APIs locally." },
+      { title: "Module 4 — Containers basics (Docker/Podman)", overview: "Images, containers and basic docker commands." },
+      { title: "Module 5 — Container workflows & image building", overview: "Dockerfiles, multi-stage builds and registries (local/demo)." },
+      { title: "Module 6 — Orchestration intro (minikube/k3s)", overview: "k8s basics: pods, services and deployments (local demo)." },
+      { title: "Module 7 — Storage & database patterns", overview: "Object vs block storage, basic managed DB concepts." },
+      { title: "Module 8 — IAM & security fundamentals", overview: "Principle of least privilege, roles, keys and auth flows." },
+      { title: "Module 9 — CI/CD fundamentals (GitHub Actions)", overview: "Build/test/deploy pipelines and simple automation." },
+      { title: "Module 10 — Monitoring basics (Prometheus/Grafana)", overview: "Metrics, alerts and simple dashboards (local demo)." },
+      { title: "Modules 11–12 — Capstone: Containerized app + CI pipeline", overview: "Containerize a small app, run CI pipeline locally/emulator and demo monitoring." }
+    ]
+   }
+  ];
+  
+  export const socialLinks = {
+   instagram: "https://www.instagram.com/sreshta_vlsi?igsh=MWdxdDE5YXoyMm5vcQ==",
+   // Corrected protocol for external link
+   linkedin: "https://www.linkedin.com/in/sreshta777", 
+   x: "https://x.com/sreshta_semicon",
+  };
+  
+  export const contactDetails = {
+   phone1: "7801009777",
+   phone2: "9618046555", // Assuming this is from the banner text
+   email: "sreshtasemicon@gmail.com",
+   address: "Visakhapatnam, Andhra Pradesh",
+  };

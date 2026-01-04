@@ -1,0 +1,33 @@
+
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+interface Course {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+interface CourseCardProps {
+  course: Course;
+}
+
+export default function CourseCard({ course }: CourseCardProps) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{course.title}</CardTitle>
+        <CardDescription>{course.description}</CardDescription>
+      </CardHeader>
+      <CardFooter>
+        <Button asChild>
+          <Link href={`/courses/${course.slug}`}>
+            Learn More <ArrowRight className="ml-2" />
+          </Link>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}

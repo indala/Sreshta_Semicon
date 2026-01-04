@@ -4,6 +4,7 @@ import { RegistrationForm } from "@/components/forms/RegistrationForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from 'next';
 import { MotionSection } from "@/components/common/MotionSection";
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Register | SRESHTA SEMICON TECHNOLOGIES PVT LTD',
@@ -28,7 +29,9 @@ export default function RegisterPage() {
                         <CardDescription className="text-lg">Secure your spot in our upcoming batches.</CardDescription>
                     </CardHeader>
                     <CardContent>
+                      <Suspense fallback={<div>Loading...</div>}>
                         <RegistrationForm />
+                      </Suspense>
                     </CardContent>
                 </Card>
             </div>
