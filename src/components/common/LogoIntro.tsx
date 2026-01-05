@@ -54,7 +54,7 @@ export default function LogoIntro() {
           <motion.img
             src="/logo.png"
             alt="Sreshta Logo"
-            className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto object-contain shrink-0"
+            className="w-20 sm:w-24 md:w-28 lg:w-52  h-auto object-contain shrink-0"
             initial={{ x: -20, opacity: 0, scale: 0.9 }}
             animate={{ x: 10, opacity: 1, scale: 1 }}
             transition={{ delay: 2.3, duration: 0.5, ease: 'easeOut' }}
@@ -62,17 +62,17 @@ export default function LogoIntro() {
 
           {/* Text */}
           <motion.div
-            className="ml-4 sm:ml-6 flex flex-col items-start min-w-0 mt-10"
+            className="ml-4 sm:ml-6 flex flex-col items-start min-w-0 mt-10 lg:mt-20"
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 2.5, duration: 0.6, ease: 'easeOut' }}
           >
-            <h1 className="text-5xl sm:text-4xl lg:text-6xl font-bold tracking-widest text-[#8B1C1C] leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl md:text-7xl  font-bold tracking-widest text-[#8B1C1C] leading-tight">
               SRESHTA
             </h1>
 
             <motion.p
-              className="mt-1 text-[0.65rem] sm:text-xs md:text-sm lg:text-base tracking-[0.25em] md:tracking-[0.35em] text-gray-700"
+              className="mt-1 text-[0.48rem] sm:text-[0.65rem] md:text-sm lg:text-[1.17rem] tracking-[0.25em] md:tracking-[0.35em] text-gray-700"
               initial={{ y: 8, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
