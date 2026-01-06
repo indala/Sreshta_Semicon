@@ -49,7 +49,7 @@ export default function Internships() {
   return (
     <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg sm:text-2xl text-muted-foreground">
                 Internships are provided in <strong>ONLINE | OFFLINE | HYBRID</strong> modes.
             </p>
         </div>
@@ -63,7 +63,7 @@ export default function Internships() {
                       {internship.icon}
                   </div>
                   <div>
-                      <CardTitle className="text-2xl font-headline">{internship.title}</CardTitle>
+                      <CardTitle className="text-2xl font-headline pt-4">{internship.title}</CardTitle>
                   </div>
                 </div>
               </CardHeader>

@@ -62,7 +62,7 @@ export default function LogoIntro() {
 
           {/* Text */}
           <motion.div
-            className="ml-4 sm:ml-6 flex flex-col items-start min-w-0 mt-10 lg:mt-20"
+            className="ml-4 sm:ml-6 flex flex-col items-start min-w-0 mt-4 lg:mt-20"
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 2.5, duration: 0.6, ease: 'easeOut' }}

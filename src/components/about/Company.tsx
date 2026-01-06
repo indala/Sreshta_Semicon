@@ -2,6 +2,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionSection } from "@/components/common/MotionSection";
 import { Eye, Goal } from "lucide-react";
+import {Mulish}  from "next/font/google";
+
+const mulish = Mulish({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--font-mulish",
+  });
 
 export default function Company() {
   return (
@@ -18,20 +25,20 @@ export default function Company() {
           </MotionSection>
           <div className="grid grid-cols-1 gap-8">
             <MotionSection delay={0.4} direction="left">
-              <Card className="bg-red-500 text-white hover:shadow-lg transition-all duration-300">
-                <CardHeader className="flex-row items-center gap-4">
+              <Card className="bg-[#781511] text-white hover:shadow-lg transition-all duration-300">
+                <CardHeader className="flex items-center gap-4 ">
                   <Eye className="h-10 w-10 text-white" />
-                  <CardTitle className="text-2xl font-headline m-0">Our Vision</CardTitle>
+                  <CardTitle className="text-2xl text-white font-bold m-0 font-Times ">Our Vision</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-[#CFCFCF] text-justify ">
                     The goal of SRESHTA is to serve as an intellectual bridge connecting highly developed, idealistic industries with a wealth of universities. We aim to establish a point of contact for VLSI & Software training through research and development, industry-focused education programs, and technological contributions.
                   </p>
                 </CardContent>
               </Card>
             </MotionSection>
             <MotionSection delay={0.6} direction="left">
-              <Card className="bg-red-500 text-white hover:shadow-lg transition-all duration-300">
+              <Card className="bg-[#781511] text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex-row items-center gap-4">
                   <Goal className="h-10 w-10 text-white" />
                   <CardTitle className="text-2xl font-headline m-0">Our Mission</CardTitle>

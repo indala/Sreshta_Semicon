@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#7A0C0C] to-[#4D0A0A]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#781511] via-red-800 to-[#781511]" />
       <motion.div 
         className="relative z-10 p-4"
         initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Button asChild size="lg" className="font-bold bg-gray-800 hover:bg-gray-700">
+          <Button asChild size="lg" className="font-bold bg-gray-500 hover:bg-gray-700">
             <Link href="/register">Register Now</Link>
           </Button>
           <Button
