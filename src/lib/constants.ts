@@ -15,7 +15,7 @@ export const navLinks = [
   export const courses = [
     // --- NEW VLSI COURSE: Design Verification ---
     {
-      title: "Design Verification (ASIC Front-End)",
+      title: "Design Verification",
       slug: "design-verification",
       category: "Hardware Courses",
       description: "A specialized course focusing on the verification aspect of the ASIC flow, covering System Verilog, UVM, and Functional Coverage.",
@@ -30,7 +30,7 @@ export const navLinks = [
     },
     // --- NEW VLSI COURSE: Physical Design ---
     {
-      title: "Physical Design (ASIC Back-End)",
+      title: "Physical Design",
       slug: "physical-design",
       category: "Hardware Courses",
       description: "A focused course on the back-end ASIC flow, covering timing closure, layout, and physical verification.",
