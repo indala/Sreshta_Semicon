@@ -25,7 +25,7 @@ export default function Company() {
           </MotionSection>
           <div className="grid grid-cols-1 gap-8">
             <MotionSection delay={0.4} direction="left">
-              <Card className="bg-[#781511] text-white hover:shadow-lg transition-all duration-300">
+              <Card className=" bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex items-center gap-4 ">
                   <Eye className="h-10 w-10 text-white" />
                   <CardTitle className="text-2xl text-white font-bold m-0 font-Times ">Our Vision</CardTitle>
