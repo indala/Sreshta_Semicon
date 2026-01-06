@@ -9,7 +9,7 @@ export default function Company() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <MotionSection delay={0.2} direction="right">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 ">
               Our Company
             </h2>
             <p className="mb-4 text-lg">
@@ -18,9 +18,9 @@ export default function Company() {
           </MotionSection>
           <div className="grid grid-cols-1 gap-8">
             <MotionSection delay={0.4} direction="left">
-              <Card className="bg-primary/70 text-white hover:shadow-lg transition-all duration-300">
+              <Card className="bg-red-500 text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex-row items-center gap-4">
-                  <Eye className="h-10 w-10 text-gray-700" />
+                  <Eye className="h-10 w-10 text-white" />
                   <CardTitle className="text-2xl font-headline m-0">Our Vision</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -31,9 +31,9 @@ export default function Company() {
               </Card>
             </MotionSection>
             <MotionSection delay={0.6} direction="left">
-              <Card className="bg-primary/70 text-white hover:shadow-lg transition-all duration-300">
+              <Card className="bg-red-500 text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex-row items-center gap-4">
-                  <Goal className="h-10 w-10 text-gray-700" />
+                  <Goal className="h-10 w-10 text-white" />
                   <CardTitle className="text-2xl font-headline m-0">Our Mission</CardTitle>
                 </CardHeader>
                 <CardContent>

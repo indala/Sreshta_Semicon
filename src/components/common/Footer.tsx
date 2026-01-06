@@ -58,7 +58,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
-                <span>{contactDetails.address}</span>
+                <Link href="https://maps.app.goo.gl/WoWzx97tF5UycKFo6">{contactDetails.address}</Link>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-1 shrink-0" />

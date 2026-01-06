@@ -7,22 +7,22 @@ import { AnimatedIcon } from "@/components/common/AnimatedIcon";
 
 const whyChooseUs = [
   {
-    icon: <Target className="h-8 w-8 text-primary" />,
+    icon: <Target className="h-8 w-8 text-white" />,
     title: "Industry-Aligned Curriculum",
     description: "Our courses are designed in collaboration with industry experts to meet current market demands.",
   },
   {
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    icon: <BrainCircuit className="h-8 w-8 text-white" />,
     title: "Tool-Based Practical Training",
     description: "Gain hands-on experience with the latest VLSI tools and technologies used by top companies.",
   },
   {
-    icon: <Rocket className="h-8 w-8 text-primary" />,
+    icon: <Rocket className="h-8 w-8 text-white" />,
     title: "Real-Time Projects",
     description: "Work on real-world projects that provide practical exposure and build a strong portfolio.",
   },
   {
-    icon: <CheckCircle className="h-8 w-8 text-primary" />,
+    icon: <CheckCircle className="h-8 w-8 text-white" />,
     title: "Placement & Interview Support",
     description: "We provide dedicated support for resume building, interview preparation, and job placements.",
   },
@@ -38,12 +38,12 @@ export default function WhyChooseUs() {
         <MotionGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyChooseUs.map((item, index) => (
             <MotionItem key={index}>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group">
+              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group bg-red-500 text-white">
                 <CardHeader>
-                  <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
+                  <div className="mx-auto bg-white/20 rounded-full p-3 w-fit mb-4">
                     <AnimatedIcon>{item.icon}</AnimatedIcon>
                   </div>
-                  <CardTitle className="text-xl font-headline text-foreground">
+                  <CardTitle className="text-xl font-headline">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
