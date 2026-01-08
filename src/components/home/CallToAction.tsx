@@ -3,11 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { AnimatedIcon } from "@/components/common/AnimatedIcon";
+import { MotionSection } from "@/components/common/MotionSection";
 
 export default function CallToAction() {
   return (
     <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 text-center">
+      <MotionSection className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
           Ready to Start Your Career in VLSI?
         </h2>
@@ -33,7 +34,7 @@ export default function CallToAction() {
             <Link href="/register">Register for a Course</Link>
           </Button>
         </div>
-      </div>
+      </MotionSection>
     </section>
   );
 }

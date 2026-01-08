@@ -2,11 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedArrow } from "@/components/common/AnimatedArrow";
 import Link from "next/link";
+import { MotionSection } from "@/components/common/MotionSection";
 
 export default function About() {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-gray-300 to-gray-500">
-      <div className="container mx-auto px-4 text-center">
+      <MotionSection className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
           Bridging Academia and Industry
         </h2>
@@ -18,7 +19,7 @@ export default function About() {
             Learn More About Us <AnimatedArrow />
           </Link>
         </Button>
-      </div>
+      </MotionSection>
     </section>
   );
 }

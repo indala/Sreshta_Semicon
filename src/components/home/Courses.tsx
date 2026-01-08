@@ -6,6 +6,8 @@ import { courses } from "@/lib/constants";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedArrow } from "@/components/common/AnimatedArrow";
+import { MotionGrid } from "@/components/common/MotionGrid";
+import { MotionItem } from "@/components/common/MotionItem";
 
 export default function Courses() {
   return (
@@ -15,11 +17,10 @@ export default function Courses() {
           Our Core Courses
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+        <MotionGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
           {courses.slice(0, 5).map((course, index) => (
-            <div
+            <MotionItem
               key={course.title}
-              style={{ animationDelay: `${index * 0.6}s` }}
               className="relative w-full max-w-[422px] rounded-2xl p-[2px] bg-red-600 animate-border-spin"
             >
               {/* Rotating white dot */}
@@ -49,9 +50,9 @@ export default function Courses() {
                   </Button>
                 </div>
               </Card>
-            </div>
+            </MotionItem>
           ))}
-        </div>
+        </MotionGrid>
 
         {/* View more CTA */}
         <div className="mt-10 flex justify-center">
