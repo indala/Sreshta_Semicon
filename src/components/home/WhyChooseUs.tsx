@@ -38,17 +38,15 @@ export default function WhyChooseUs() {
         <MotionGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyChooseUs.map((item, index) => (
             <MotionItem key={index}>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group bg-red-500 text-white">
-                <CardHeader>
-                  <div className="mx-auto bg-white/20 rounded-full p-3 w-fit mb-4">
+              <Card className="bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                <CardHeader className="flex flex-row items-center gap-4">
                     <AnimatedIcon>{item.icon}</AnimatedIcon>
-                  </div>
-                  <CardTitle className="text-xl font-headline">
+                  <CardTitle className="text-xl font-bold text-white font-headline">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>{item.description}</p>
+                  <p className="text-[#CFCFCF] text-justify">{item.description}</p>
                 </CardContent>
               </Card>
             </MotionItem>

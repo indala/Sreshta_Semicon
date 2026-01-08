@@ -80,7 +80,7 @@ export function Header() {
               <button
                 className="flex items-center justify-center w-16 h-16  bg-foreground/5 hover:bg-foreground/10 focus:outline-none"
               >
-                <Menu className="h-10 w-10 text-primary" />
+                <Menu size={30} className="  text-primary" />
                 <span className="sr-only">Open Menu</span>
               </button>
             </SheetTrigger>

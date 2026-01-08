@@ -38,13 +38,13 @@ export default function Company() {
               </Card>
             </MotionSection>
             <MotionSection delay={0.6} direction="left">
-              <Card className="bg-[#781511] text-white hover:shadow-lg transition-all duration-300">
-                <CardHeader className="flex-row items-center gap-4">
+              <Card className=" bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300">
+                <CardHeader className="flex items-center gap-4 ">
                   <Goal className="h-10 w-10 text-white" />
-                  <CardTitle className="text-2xl font-headline m-0">Our Mission</CardTitle>
+                  <CardTitle className="text-2xl text-white font-bold m-0 font-Times ">Our Mission</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-[#CFCFCF] text-justify ">
                     SRESHTA is committed to materialize its vision through its extensive training programs, seminars, internships, and workshops. We are dedicated to realizing its mission and exposing graduates and undergraduates to the industry.
                   </p>
                 </CardContent>

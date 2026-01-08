@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { courses } from "@/lib/constants";
@@ -14,24 +15,32 @@ export default function Courses() {
           Our Core Courses
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.slice(0, 5).map((course) => (
-            <div key={course.title} className="relative group">
-              {/* Rotating glowing border behind the card */}
-              <div className="absolute -inset-1 rounded-lg overflow-hidden pointer-events-none">
-                <div className="w-full h-full rounded-lg bg-gradient-to-r from-red-500 via-red-400 to-red-500 blur-xl opacity-70 animate-rotate-slow" />
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+          {courses.slice(0, 5).map((course, index) => (
+            <div
+              key={course.title}
+              style={{ animationDelay: `${index * 0.6}s` }}
+              className="relative w-full max-w-[422px] rounded-2xl p-[2px] bg-red-600 animate-border-spin"
+            >
+              {/* Rotating white dot */}
+              <span className="pointer-events-none absolute inset-0 rounded-2xl animate-orbit">
+                <span className="absolute -top-1 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-white shadow-[0_0_12px_4px_rgba(255,255,255,0.9)]" />
+              </span>
 
-              {/* Static Card */}
-              <Card className="relative z-10 flex flex-col border border-red-500 rounded-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="group relative z-10 flex h-full flex-col rounded-2xl bg-card transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
+                {/* hover glow */}
+                <span className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-red-500/10 blur-xl" />
+
                 <CardHeader>
                   <CardTitle className="text-2xl font-headline text-primary">
                     {course.title}
                   </CardTitle>
                 </CardHeader>
+
                 <CardContent className="flex-grow">
                   <p className="mb-6">{course.description}</p>
                 </CardContent>
+
                 <div className="p-6 pt-0">
                   <Button asChild className="w-full">
                     <Link href={`/courses/${course.slug}`}>

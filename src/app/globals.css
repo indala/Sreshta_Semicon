@@ -160,3 +160,27 @@
 .animate-rotate-slow {
   animation: rotate-slow 10s linear infinite;
 }
+
+@property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+
+@keyframes border {
+    to {
+        --border-angle: 360deg;
+    }
+}
+
+
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 6s linear infinite;
+}

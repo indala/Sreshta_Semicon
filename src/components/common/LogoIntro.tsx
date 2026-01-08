@@ -4,17 +4,16 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { aileron } from '@/app/fonts'
 
 export default function LogoIntro() {
-  const router = useRouter()
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      router.replace('/home') // replace = no back to intro
-    }, 3200) // total animation duration
-
-    return () => clearTimeout(timer)
-  }, [router])
+ const router = useRouter()
+ useEffect(() => {
+   const timer = setTimeout(() => {
+     router.replace('/home') // replace = no back to intro
+   }, 3200) // total animation duration
+   return () => clearTimeout(timer)
+ }, [router])
 
   return (
     <div className="relative flex h-screen w-full items-center justify-center bg-linear-to-br from-gray-300 via-gray-300 to-gray-500 overflow-hidden">
@@ -54,7 +53,7 @@ export default function LogoIntro() {
           <motion.img
             src="/logo.png"
             alt="Sreshta Logo"
-            className="w-20 sm:w-24 md:w-28 lg:w-52  h-auto object-contain shrink-0"
+            className="w-20 sm:w-24 md:w-42 lg:w-52  h-auto object-contain shrink-0"
             initial={{ x: -20, opacity: 0, scale: 0.9 }}
             animate={{ x: 10, opacity: 1, scale: 1 }}
             transition={{ delay: 2.3, duration: 0.5, ease: 'easeOut' }}
@@ -62,17 +61,17 @@ export default function LogoIntro() {
 
           {/* Text */}
           <motion.div
-            className="ml-4 sm:ml-6 flex flex-col items-start min-w-0 mt-4 lg:mt-20"
+            className="ml-2 sm:ml-1 flex flex-col items-start min-w-0 mt-10   sm:mt-12 md:mt-20 lg:mt-24"
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 2.5, duration: 0.6, ease: 'easeOut' }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-8xl md:text-7xl  font-bold tracking-widest text-[#8B1C1C] leading-tight">
+            <h1 className={`${aileron.className} text-4xl scale-y-[1.5] sm:text-5xl md:text-7xl lg:text-8xl   font-bold sm:scale-y-[1.3] md:scale-y-[1.5] lg:scale-y-[1.5]  text-[#781511] leading-tight`}>
               SRESHTA
             </h1>
 
             <motion.p
-              className="mt-1 text-[0.48rem] sm:text-[0.65rem] md:text-sm lg:text-[1.17rem] tracking-[0.25em] md:tracking-[0.35em] text-gray-700"
+              className={` ${aileron.className} mt-1 sm:mt-0 scale-y-[1.4] md:mt-1   text-[0.62rem] sm:text-[0.82rem] md:text-[1.23rem] lg:text-[1.64rem] lg:scale-y-[1.4]  font-bold font-semibold text-gray-700`}
               initial={{ y: 8, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
