@@ -39,7 +39,7 @@ export default function Values() {
                   <CardTitle className="text-xl font-bold text-white font-headline">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#CFCFCF] text-justify">{value.description}</p>
+                  <p className="text-[#CFCFCF] text-justify font-semibold">{value.description}</p>
                 </CardContent>
               </Card>
             </MotionItem>

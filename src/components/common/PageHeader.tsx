@@ -24,8 +24,8 @@ export function PageHeader({ title, description, imageId }: PageHeaderProps) {
         />
       )}
 
-      {/* Neutral tech overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-900/70 via-slate-800/60 to-slate-900/70" />
+      {/* Neutral tech overlay 
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-900/40 via-slate-800/50 to-slate-900/60" />*/}
 
       <div className="relative z-20 p-4 text-white">
         <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight drop-shadow-lg">

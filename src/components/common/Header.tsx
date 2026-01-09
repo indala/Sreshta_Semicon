@@ -22,12 +22,12 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 my-1">
       <div className="container flex h-16 items-center">
         <Logo />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex md:items-center md:gap-6 lg:gap-8 ml-auto text-sm font-medium">
+        <nav className="hidden md:flex md:items-center md:gap-6 lg:gap-8 ml-auto text-[1.1rem] font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}

@@ -4,11 +4,11 @@ export const navLinks = [
   ];
   
   export const programLinks = [
+    { href: "/corporate-training", label: "Corporate Training" },
    { href: "/courses", label: "Courses & Programs" },
    { href: "/focus-areas", label: "Focus Areas" },
    { href: "/internships", label: "Internships" },
    { href: "/projects", label: "Projects" },
-   { href: "/corporate-training", label: "Corporate Training" },
    { href: "/project-assistance", label: "Project Assistance" },
   ];
   

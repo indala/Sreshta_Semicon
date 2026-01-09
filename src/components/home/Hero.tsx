@@ -3,29 +3,17 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import dynamic from "next/dynamic";
-
-// Dynamically load 3D scene to avoid SSR issues
-const HeroScene3D = dynamic(() => import("./HeroScene3D"), { ssr: false });
-
 export default function Hero() {
   return (
-    <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
-      {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
-        <HeroScene3D />
-      </div>
-
-      {/* Gradient Overlay to ensure text readability */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-b from-black/20 via-transparent to-black/80 pointer-events-none" />
-
-      <motion.div
+    <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#781511] via-red-800 to-[#781511]" />
+      <motion.div 
         className="relative z-10 p-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
+        <motion.h1 
           className="text-4xl md:text-7xl font-bold font-headline tracking-tight text-white drop-shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +21,7 @@ export default function Hero() {
         >
           Brains Behind the Chip
         </motion.h1>
-        <motion.p
+        <motion.p 
           className="mt-4 text-lg md:text-2xl max-w-3xl mx-auto text-gray-200 drop-shadow-md"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +29,7 @@ export default function Hero() {
         >
           Your Closest Access to Semiconductor Excellence
         </motion.p>
-        <motion.div
+        <motion.div 
           className="mt-8 flex justify-center gap-4 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

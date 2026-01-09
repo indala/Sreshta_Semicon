@@ -47,10 +47,10 @@ export default function Offerings() {
                 <div className="bg-primary/10 p-3 rounded-full">
                   {offering.icon}
                 </div>
-                <CardTitle className="text-xl font-headline text-foreground">{offering.title}</CardTitle>
+                <CardTitle className="text-xl text-red-900  font-headline  font-bold">{offering.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>{offering.description}</p>
+                <p className="text-[1.1rem]">{offering.description}</p>
               </CardContent>
             </Card>
           </MotionItem>

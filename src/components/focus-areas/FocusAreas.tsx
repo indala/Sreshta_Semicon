@@ -5,7 +5,7 @@ import { Cpu, CircuitBoard, Code, CheckSquare, Layers } from "lucide-react";
 const focusAreas = [
   {
     icon: <Cpu className="h-8 w-8 text-primary" />,
-    title: "VLSI Design Verification - ASIC Front-End",
+    title: "VLSI Design Verification",
     description: "Expertise in digital RTL implementation, verification simulations, and automated workflows using SystemVerilog, UVM and scripting languages.",
     topics: [
       {
@@ -27,7 +27,7 @@ const focusAreas = [
   },
   {
     icon: <CircuitBoard className="h-8 w-8 text-primary" />,
-    title: "VLSI Physical Design - ASIC Back-End",
+    title: "VLSI Physical Design",
     description: "High-end proficiency in creating optimized chip layouts through strategic floorplanning, refined placement, balanced clock trees and efficient routing.",
     topics: [
       {
@@ -83,7 +83,7 @@ export default function FocusAreas() {
                   {area.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-headline text-primary">{area.title}</h3>
+                  <h3 className="text-xl font-bold font-headline font-bold text-black/70">{area.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{area.description}</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function FocusAreas() {
                     <div key={i} className="flex items-start gap-4 p-3 rounded-md bg-background">
                       <div className="text-primary">{topic.icon}</div>
                       <div>
-                        <p className="font-semibold text-foreground">{topic.name}</p>
+                        <p className=" text-foreground font-bold">{topic.name}</p>
                         <p className="text-sm text-muted-foreground">{topic.details}</p>
                       </div>
                     </div>

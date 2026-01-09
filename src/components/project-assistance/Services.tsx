@@ -33,11 +33,11 @@ const services = [
 export default function Services() {
   return (
     <div className="container mx-auto px-4">
-      <div className="text-center max-w-3xl mx-auto mb-12">
+      <div className="text-center p-10 sm:px-16   rounded-lg mx-auto mb-12 bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700">
         <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
           Your Success is Our Goal
         </h2>
-        <p className="text-lg">
+        <p className="text-xl text-white text-justify ">
           Sreshta offers end-to-end support for final-year academic students, ensuring their projects are industry-aligned and impactful. We guide students from project topic selection to tool setup, debugging, and documentation, helping them build a strong foundation for their careers. Our mentors work closely with students to ensure their projects are not just completed but are also valuable assets for placement.
         </p>
       </div>
