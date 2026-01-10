@@ -16,7 +16,8 @@ interface CourseCardProps {
 
 export default function CourseCard({ course }: CourseCardProps) {
   return (
-    <Card>
+    <Card className="border-red-900 border-2 shadow shadow-lg hover:shadow-xl transition-all duration-700 relative hover:-translate-y-2 hover:border-1 ">
+      
       <CardHeader>
         <CardTitle>{course.title}</CardTitle>
         <CardDescription>{course.description}</CardDescription>
