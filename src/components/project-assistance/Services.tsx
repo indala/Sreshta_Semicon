@@ -9,7 +9,7 @@ const services = [
         description: "We help you choose a relevant and impactful project topic that aligns with current industry trends."
     },
     {
-        icon: <Wrench className="h-8 w-8 text-primary" />,
+        icon: <Wrench className="h-8 w-8 text-primary " />,
         title: "Tool Environment Setup",
         description: "Get complete assistance with installing and configuring the necessary software and tools for your project."
     },
@@ -44,7 +44,7 @@ export default function Services() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+          <Card key={index} className="text-center border-2 border-red-700 hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
                 {service.icon}

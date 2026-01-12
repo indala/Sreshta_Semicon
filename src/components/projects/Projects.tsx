@@ -155,7 +155,7 @@ export default function Projects() {
                     <TabsContent key={key} value={key}>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {category.projects.map((project, idx) => (
-                                <Card key={idx} className="group hover:border-primary/50 transition-all duration-300 dark:bg-zinc-900/50 backdrop-blur-sm">
+                                <Card key={idx} className="group border-2 border-red-700 hover:border-primary/50 transition-all duration-300 dark:bg-zinc-900/50 backdrop-blur-sm">
                                     <CardHeader className="space-y-1">
                                         <div className="flex items-start justify-between">
                                             <CardTitle className="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
@@ -173,10 +173,10 @@ export default function Projects() {
                                         )}
                                     </CardHeader>
                                     <CardContent>
-                                        <CardDescription className="text-sm leading-relaxed text-zinc-400">
+                                        <CardDescription className="text-2lg text-justify  leading-relaxed text-black/100">
                                             {project.description}
                                         </CardDescription>
-                                        <div className="flex items-center gap-2 mt-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <div className="flex  items-center gap-2 mt-4 text-primary  group-hover:opacity-100 transition-opacity">
                                             <CheckCircle2 className="h-4 w-4" />
                                             <span className="text-xs font-semibold uppercase tracking-tighter">Verified Implementation</span>
                                         </div>

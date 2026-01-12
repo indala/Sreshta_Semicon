@@ -68,15 +68,37 @@ const focusAreas = [
         details: "Implement and test protocols like UART, SPI, and I2C on real hardware."
       },
     ]
+  },
+   {
+    icon: <Code className="h-8 w-8 text-primary" />,
+    title: "IOT – INTERNET OF THINGS",
+    description: "Specialization in creating performance-driven FPGA solutions through efficient coding, timing optimization and resource-aware design strategies.",
+    topics: [
+      {
+        icon: <Code className="h-5 w-5 text-primary/80" />,
+        name: "RTL to Bitstream",
+        details: "Follow the complete FPGA design flow, from writing code to programming the hardware."
+      },
+      {
+        icon: <CheckSquare className="h-5 w-5 text-primary/80" />,
+        name: "Tool Flows (Vivado / Quartus)",
+        details: "Get hands-on experience with industry-leading FPGA development tools."
+      },
+      {
+        icon: <Layers className="h-5 w-5 text-primary/80" />,
+        name: "Communication Protocols",
+        details: "Implement and test protocols like UART, SPI, and I2C on real hardware."
+      },
+    ]
   }
 ];
 
 export default function FocusAreas() {
   return (
     <div className="container mx-auto px-4 max-w-4xl">
-      <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-6">
+      <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-6 ">
         {focusAreas.map((area, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg bg-card shadow-sm">
+          <AccordionItem key={index} value={`item-${index}`} className="border-2 border-red-700 rounded-lg bg-card shadow-sm">
             <AccordionTrigger className="p-6 text-left hover:no-underline">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -91,7 +113,7 @@ export default function FocusAreas() {
             <AccordionContent className="px-6 pb-6">
               <div className="border-t pt-4 mt-2">
                 <h4 className="font-semibold text-foreground mb-4">Key Topics:</h4>
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                   {area.topics.map((topic, i) => (
                     <div key={i} className="flex items-start gap-4 p-3 rounded-md bg-background">
                       <div className="text-primary">{topic.icon}</div>

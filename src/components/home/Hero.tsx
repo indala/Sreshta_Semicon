@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#781511] via-red-800 to-[#781511]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-[#890000] to-[#460202]" />
       <motion.div 
         className="relative z-10 p-4"
         initial={{ opacity: 0, y: 20 }}

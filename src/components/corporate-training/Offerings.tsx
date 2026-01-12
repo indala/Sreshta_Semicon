@@ -6,22 +6,22 @@ import { MotionItem } from "@/components/common/MotionItem";
 
 const offerings = [
     {
-        icon: <Users className="h-8 w-8 text-primary" />,
+        icon: <Users className="h-8 w-8 text-white" />,
         title: "Customized Training Approach",
         description: "We design and deliver training modules tailored to your organization's specific needs and project requirements."
     },
     {
-        icon: <RefreshCw className="h-8 w-8 text-primary" />,
+        icon: <RefreshCw className="h-8 w-8 text-white" />,
         title: "Tool-Based Refreshers",
         description: "Our refresher courses help your teams get up to speed with the latest versions of industry-standard tools and methodologies."
     },
     {
-        icon: <Check className="h-8 w-8 text-primary" />,
+        icon: <Check className="h-8 w-8 text-white" />,
         title: "Client Interview Preparation",
         description: "We offer specialized programs to prepare your employees for critical client interviews, ensuring they showcase their skills effectively."
     },
     {
-        icon: <Laptop className="h-8 w-8 text-primary" />,
+        icon: <Laptop className="h-8 w-8 text-white" />,
         title: "Flexible Delivery Modes",
         description: "Choose from onsite, online, or hybrid delivery models to suit your team's location and schedule, minimizing disruption."
     }
@@ -42,15 +42,13 @@ export default function Offerings() {
       <MotionGrid className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {offerings.map((offering, index) => (
           <MotionItem key={index}>
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 h-full">
+            <Card className="bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300 hover:-translate-y-2 h-full">
               <CardHeader className="flex flex-row items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  {offering.icon}
-                </div>
-                <CardTitle className="text-xl text-red-900  font-headline  font-bold">{offering.title}</CardTitle>
+                {offering.icon}
+                <CardTitle className="text-xl text-white font-headline font-bold">{offering.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-[1.1rem]">{offering.description}</p>
+                <p className="text-[1.1rem] text-[#CFCFCF]">{offering.description}</p>
               </CardContent>
             </Card>
           </MotionItem>

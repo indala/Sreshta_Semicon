@@ -26,7 +26,7 @@ export async function handleRegistration(data: unknown) {
   try {
     // Send email to Admin
     await resend.emails.send({
-      from: 'Sreshta Semicon <sreshtasemicon.com>',
+      from: 'Sreshta Semicon <info@sreshtasemicon.com>',
       to: 'info@sreshtasemicon.com',
       subject: `New Registration: ${parsed.data.course}`,
       react: <RegistrationEmail data={parsed.data} />,
@@ -34,7 +34,7 @@ export async function handleRegistration(data: unknown) {
 
     // Send confirmation email to User
     await resend.emails.send({
-      from: 'Sreshta Semicon <sreshtasemicon.com>',
+      from: 'Sreshta Semicon <info@sreshtasemicon.com>',
       to: parsed.data.email,
       subject: 'Registration Confirmation - Sreshta Semicon',
       react: <ConfirmationEmail name={parsed.data.fullName} />,
@@ -65,8 +65,8 @@ export async function handleContact(data: unknown) {
   try {
     // Send email to Admin
     await resend.emails.send({
-      from: 'Sreshta Semicon <sreshtasemicon.com>',
-      to: 'info@sreshtasemicon@gmail.com',
+      from: 'Sreshta Semicon <info@sreshtasemicon.com>',
+      to: 'info@sreshtasemicon.com',
       subject: `New Contact Message from ${parsed.data.name}`,
       react: <ContactEmail data={parsed.data} />,
     });

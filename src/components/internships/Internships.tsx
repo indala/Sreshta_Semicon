@@ -155,9 +155,9 @@ export default function Internships() {
                               <Calendar className="h-5 w-5 text-primary" />
                               <h4 className="font-bold text-lg text-foreground">4-Week Internship</h4>
                           </div>
-                          <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                          <ul className="space-y-2 pl-5 list-disc ">
                               {internship.fourWeek.map((item, i) => (
-                              <li key={i}>{item}</li>
+                              <li className="text-dark/90 text-semibold" key={i}>{item}</li>
                               ))}
                           </ul>
                       </div>
@@ -166,9 +166,9 @@ export default function Internships() {
                               <Calendar className="h-5 w-5 text-primary" />
                               <h4 className="font-bold text-lg text-foreground">12-Week Internship</h4>
                           </div>
-                          <ul className="space-y-2 pl-5 list-disc text-muted-foreground">
+                          <ul className="space-y-2 pl-5 list-disc ">
                               {internship.twelveWeek.map((item, i) => (
-                              <li key={i}>{item}</li>
+                              <li className="text-dark/90 text-bold" key={i}>{item}</li>
                               ))}
                           </ul>
                       </div>
