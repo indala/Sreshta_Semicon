@@ -9,7 +9,104 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedArrow } from "@/components/common/AnimatedArrow";
 import { MotionGrid } from "@/components/common/MotionGrid";
 import { MotionItem } from "@/components/common/MotionItem";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
+function CourseCard({ course }: { course: any }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className="relative h-full rounded-2xl p-[1px] bg-gradient-to-b from-border to-transparent hover:from-red-500/50 transition-colors duration-500 group"
+    >
+      <Card className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-card border-none transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(220,38,38,0.15)] group-hover:-translate-z-10">
+        {/* Dynamic Glow */}
+        <motion.div
+          className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{
+            background: useTransform(
+              [mouseXSpring, mouseYSpring],
+              ([x, y]) => `radial-gradient(600px circle at ${(Number(x) + 0.5) * 100}% ${(Number(y) + 0.5) * 100}%, rgba(220, 38, 38, 0.1), transparent 40%)`
+            ),
+          }}
+        />
+
+        {/* Image Container */}
+        <div className="relative h-56 w-full overflow-hidden" style={{ transform: "translateZ(50px)" }}>
+          {course.image && (
+            <Image
+              src={course.image}
+              alt={course.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+          <div className="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+            {course.category}
+          </div>
+        </div>
+
+        <CardHeader className="pt-6" style={{ transform: "translateZ(30px)" }}>
+          <CardTitle className="text-2xl font-headline group-hover:text-primary transition-colors duration-300">
+            {course.title}
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent className="flex-grow" style={{ transform: "translateZ(20px)" }}>
+          <p className="text-muted-foreground line-clamp-3 mb-6">
+            {course.description}
+          </p>
+        </CardContent>
+
+        <div className="p-6 pt-0" style={{ transform: "translateZ(40px)" }}>
+          <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-all duration-300 border-primary/20">
+            <Link href={`/courses/${course.slug}`}>
+              <span>Learn More</span>
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
+
+        <motion.div
+          className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-500"
+          layoutId={`border-${course.slug}`}
+        />
+      </Card>
+    </motion.div>
+  );
+}
 
 export default function Courses() {
   const displayCourses = courses.slice(0, 5);
@@ -47,55 +144,13 @@ export default function Courses() {
           {displayCourses.map((course, index) => (
             <MotionItem
               key={course.title}
-              className="group h-full"
+              className="h-full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
-              <div className="relative h-full rounded-2xl p-[1px] bg-gradient-to-b from-border to-transparent hover:from-primary/50 transition-colors duration-500">
-                <Card className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-card border-none transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] group-hover:-translate-y-2">
-                  {/* Image Container */}
-                  <div className="relative h-56 w-full overflow-hidden">
-                    {course.image && (
-                      <Image
-                        src={course.image}
-                        alt={course.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
-                    <div className="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
-                      {course.category}
-                    </div>
-                  </div>
-
-                  <CardHeader className="pt-6">
-                    <CardTitle className="text-2xl font-headline group-hover:text-primary transition-colors duration-300">
-                      {course.title}
-                    </CardTitle>
-                  </CardHeader>
-
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground line-clamp-3 mb-6">
-                      {course.description}
-                    </p>
-                  </CardContent>
-
-                  <div className="p-6 pt-0">
-                    <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-all duration-300 border-primary/20">
-                      <Link href={`/courses/${course.slug}`}>
-                        <span>Learn More</span>
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </div>
-
-                  {/* Animated Border Line on Hover */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-500"
-                    layoutId={`border-${course.slug}`}
-                  />
-                </Card>
-              </div>
+              <CourseCard course={course} />
             </MotionItem>
           ))}
         </MotionGrid>

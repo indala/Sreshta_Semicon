@@ -60,9 +60,12 @@ export function Footer() {
                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
                 <Link href="https://maps.app.goo.gl/WoWzx97tF5UycKFo6">{contactDetails.address}</Link>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex  items-start gap-3 ">
                 <Mail className="h-4 w-4 mt-1 shrink-0" />
-                <a href={`mailto:${contactDetails.email}`} className="hover:text-primary transition-colors">{contactDetails.email}</a>
+                <div className='flex flex-col gap-1'>
+                <a href={`mailto:${contactDetails.email1}`} className="hover:text-primary transition-colors text-[1.01rem]">{contactDetails.email1}</a>
+                <a href={`mailto:${contactDetails.email2}`} className="hover:text-primary transition-colors">{contactDetails.email2}</a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-1 shrink-0" />

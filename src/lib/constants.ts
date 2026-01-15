@@ -347,7 +347,8 @@ export const socialLinks = {
 
 export const contactDetails = {
   phone1: "7801009777",
-  phone2: "9618046555", // Assuming this is from the banner text
-  email: "sreshtasemicon@gmail.com",
+  phone2: "9618046555",
+  email1: "info@sreshtasemicon.com",
+  email2: "sreshtasemicon@gmail.com",
   address: "Visakhapatnam, Andhra Pradesh",
 };

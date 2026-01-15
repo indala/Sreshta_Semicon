@@ -50,16 +50,17 @@ export default function ContactInfo() {
 
         {/* Email */}
         <MotionItem>
-          <a
-            href={`mailto:${contactDetails.email}`}
-            className="block focus:outline-none"
-          >
             <InfoCard
               icon={<FaEnvelope className="h-6 w-6 text-primary" />}
               title="Email"
-              content={<p>{contactDetails.email}</p>}
+              content={
+                <div className="flex gap-5 flex-wrap">
+              <a href={`mailto:${contactDetails.email1}`}>{contactDetails.email1}</a>
+              <a href={`mailto:${contactDetails.email2}`}>{contactDetails.email2}</a>
+              </div>
+            }
             />
-          </a>
+          
         </MotionItem>
 
         {/* Address (Google Maps click) */}
