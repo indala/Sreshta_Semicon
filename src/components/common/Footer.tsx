@@ -1,15 +1,56 @@
 
-'use client'
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import { Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Phone, Twitter, ArrowRight, Loader2 } from 'lucide-react';
 
 import { contactDetails, navLinks, socialLinks, programLinks } from '@/lib/constants';
 import { Logo } from './Logo';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+import { subscribeToNewsletter } from '@/app/actions';
 
 import { motion } from 'framer-motion';
 
 export function Footer() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    try {
+      const result = await subscribeToNewsletter({ email });
+
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: result.message,
+        });
+        setEmail('');
+      } else {
+        toast({
+          title: "Error",
+          description: result.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-card border-t">
       <div className="container mx-auto px-4 py-12">
@@ -54,7 +95,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-lg mb-4 text-foreground">Quick Links</h3>
+            <h3 className="font-bold font-headline text-lg mb-4 text-primary relative inline-block">
+              Quick Links
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-transparent" />
+            </h3>
             <ul className="space-y-2">
               {[...navLinks, ...programLinks].slice(0, 5).map(link => (
                 <li key={link.href}>
@@ -66,14 +110,16 @@ export function Footer() {
               <li>
                 <Link href="/register" className="text-sm hover:text-primary transition-colors">
                   Register
-                </Link
-                >
+                </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-lg mb-4 text-foreground">Contact Us</h3>
+            <h3 className="font-bold font-headline text-lg mb-4 text-primary relative inline-block">
+              Contact Us
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-transparent" />
+            </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
@@ -97,10 +143,31 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-lg mb-4 text-foreground">Newsletter</h3>
+            <h3 className="font-bold font-headline text-lg mb-4 text-primary relative inline-block">
+              Newsletter
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-transparent" />
+            </h3>
             <p className="text-sm mb-4">Stay updated with our latest courses and news.</p>
-            {/* Newsletter form can be added here in the future */}
-            <p className="text-xs text-muted-foreground">Subscribe to get our latest content by email.</p>
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-background"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Button type="submit" size="icon" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <ArrowRight className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">Subscribe to get our latest content by email.</p>
+            </form>
           </div>
         </div>
 

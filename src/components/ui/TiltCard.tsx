@@ -55,14 +55,14 @@ export function TiltCard({ children, className, glowColor = "rgba(255, 255, 255,
                 rotateY,
                 transformStyle: "preserve-3d",
             }}
-            className={cn("relative w-full h-full transform-gpu", className)}
+            className={cn("group relative w-full h-full transform-gpu", className)}
         >
             <div
                 style={{
                     transform: "translateZ(75px)",
                     transformStyle: "preserve-3d",
                 }}
-                className="absolute inset-4 z-0 bg-transparent transition-all duration-200"
+                className="pointer-events-none absolute inset-4 z-0 bg-transparent transition-all duration-200"
             />
             {children}
 

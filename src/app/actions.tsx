@@ -5,6 +5,8 @@ import { resend } from '@/lib/resend';
 import { RegistrationEmail } from '@/components/emails/RegistrationEmail';
 import { ConfirmationEmail } from '@/components/emails/ConfirmationEmail';
 import { ContactEmail } from '@/components/emails/ContactEmail';
+import { NewsletterEmail } from '@/components/emails/NewsletterEmail';
+
 
 // Schema for Registration Form
 const registrationSchema = z.object({
@@ -77,3 +79,33 @@ export async function handleContact(data: unknown) {
     return { success: false, message: 'Failed to send contact email.' };
   }
 }
+
+// Schema for Newsletter
+const newsletterSchema = z.object({
+  email: z.string().email('Invalid email address.'),
+});
+
+
+export async function subscribeToNewsletter(data: unknown) {
+  const parsed = newsletterSchema.safeParse(data);
+
+  if (!parsed.success) {
+    return { success: false, message: 'Invalid email address.', errors: parsed.error.flatten().fieldErrors };
+  }
+
+  try {
+    // Send email to Admin
+    await resend.emails.send({
+      from: 'Sreshta Semicon <info@sreshtasemicon.com>',
+      to: 'info@sreshtasemicon.com',
+      subject: `New Newsletter Subscriber: ${parsed.data.email}`,
+      react: <NewsletterEmail email={parsed.data.email} />,
+    });
+
+    return { success: true, message: 'Subscribed successfully!' };
+  } catch (error) {
+    console.error('Resend Error (Newsletter):', error);
+    return { success: false, message: 'Failed to subscribe.' };
+  }
+}
+
