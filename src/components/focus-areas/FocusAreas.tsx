@@ -1,6 +1,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cpu, CircuitBoard, Code, CheckSquare, Layers } from "lucide-react";
+import { AnimatedIcon } from "@/components/common/AnimatedIcon";
 
 const focusAreas = [
   {
@@ -69,7 +70,7 @@ const focusAreas = [
       },
     ]
   },
-   {
+  {
     icon: <Code className="h-8 w-8 text-primary" />,
     title: "IOT – INTERNET OF THINGS",
     description: "Specialization in creating performance-driven FPGA solutions through efficient coding, timing optimization and resource-aware design strategies.",
@@ -97,12 +98,14 @@ export default function FocusAreas() {
   return (
     <div className="container mx-auto px-4 max-w-4xl">
       <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-6 ">
+
+
         {focusAreas.map((area, index) => (
           <AccordionItem key={index} value={`item-${index}`} className="border-2 border-red-700 rounded-lg bg-card shadow-sm">
             <AccordionTrigger className="p-6 text-left hover:no-underline">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
-                  {area.icon}
+                  <AnimatedIcon>{area.icon}</AnimatedIcon>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold font-headline font-bold text-black/70">{area.title}</h3>

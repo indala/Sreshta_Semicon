@@ -1,8 +1,9 @@
-
 import { Cpu, CircuitBoard, Microchip, Network, CheckCircle2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AnimatedIcon } from "@/components/common/AnimatedIcon";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
 
 const projectsData = {
     verification: {
@@ -142,9 +143,11 @@ export default function Projects() {
             <Tabs defaultValue="verification" className="w-full">
                 <div className="flex justify-center mb-12">
                     <TabsList className="bg-muted/50 p-1">
+
+
                         {Object.entries(projectsData).map(([key, category]) => (
                             <TabsTrigger key={key} value={key} className="flex items-center gap-2 px-6">
-                                {category.icon}
+                                <AnimatedIcon>{category.icon}</AnimatedIcon>
                                 <span className="hidden sm:inline">{category.title}</span>
                             </TabsTrigger>
                         ))}

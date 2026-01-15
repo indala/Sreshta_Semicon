@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Header() {
   return (
     <PageHeader
-      title="About SRESHTA SEMICON"
+      title={["About", "SRESHTA\u00A0SEMICON"]}
       description="Pioneering excellence in semiconductor education and training."
       imageId="about-header"
     />

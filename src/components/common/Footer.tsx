@@ -1,10 +1,13 @@
 
+'use client'
 import Link from 'next/link';
 import { Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 
 import { contactDetails, navLinks, socialLinks, programLinks } from '@/lib/constants';
 import { Logo } from './Logo';
 import { Button } from '../ui/button';
+
+import { motion } from 'framer-motion';
 
 export function Footer() {
   return (
@@ -16,25 +19,40 @@ export function Footer() {
             <p className="text-sm max-w-xs">
               Your closest access to semiconductor excellence. We are committed to bridging the gap between academia and industry.
             </p>
-             <div className="flex space-x-4 mt-4">
-              <Button variant="ghost" size="icon" asChild>
+            <div className="flex space-x-4 mt-4">
+              <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 hover:text-primary transition-colors">
                 <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </motion.div>
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" asChild>
+              <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 hover:text-primary transition-colors">
                 <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <Instagram className="h-5 w-5" />
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </motion.div>
                 </a>
               </Button>
-               <Button variant="ghost" size="icon" asChild>
+              <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 hover:text-primary transition-colors">
                 <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" aria-label="X">
-                  <Twitter className="h-5 w-5" />
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </motion.div>
                 </a>
               </Button>
             </div>
           </div>
-          
+
           <div>
             <h3 className="font-bold font-headline text-lg mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-2">
@@ -45,14 +63,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-               <li>
-                  <Link href="/register" className="text-sm hover:text-primary transition-colors">
-                    Register
-                  </Link>
-                </li>
+              <li>
+                <Link href="/register" className="text-sm hover:text-primary transition-colors">
+                  Register
+                </Link
+                >
+              </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-bold font-headline text-lg mb-4 text-foreground">Contact Us</h3>
             <ul className="space-y-3 text-sm">
@@ -63,15 +82,15 @@ export function Footer() {
               <li className="flex  items-start gap-3 ">
                 <Mail className="h-4 w-4 mt-1 shrink-0" />
                 <div className='flex flex-col gap-1'>
-                <a href={`mailto:${contactDetails.email1}`} className="hover:text-primary transition-colors text-[1.01rem]">{contactDetails.email1}</a>
-                <a href={`mailto:${contactDetails.email2}`} className="hover:text-primary transition-colors">{contactDetails.email2}</a>
+                  <a href={`mailto:${contactDetails.email1}`} className="hover:text-primary transition-colors text-[1.01rem]">{contactDetails.email1}</a>
+                  <a href={`mailto:${contactDetails.email2}`} className="hover:text-primary transition-colors">{contactDetails.email2}</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-1 shrink-0" />
                 <div>
-                    <a href={`tel:${contactDetails.phone1}`} className="hover:text-primary transition-colors block">{contactDetails.phone1}</a>
-                    <a href={`tel:${contactDetails.phone2}`} className="hover:text-primary transition-colors block">{contactDetails.phone2}</a>
+                  <a href={`tel:${contactDetails.phone1}`} className="hover:text-primary transition-colors block">{contactDetails.phone1}</a>
+                  <a href={`tel:${contactDetails.phone2}`} className="hover:text-primary transition-colors block">{contactDetails.phone2}</a>
                 </div>
               </li>
             </ul>
@@ -84,7 +103,7 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">Subscribe to get our latest content by email.</p>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t text-center text-sm">
           <p>&copy; {new Date().getFullYear()} SRESHTA SEMICON TECHNOLOGIES PVT LTD. All Rights Reserved.</p>
         </div>

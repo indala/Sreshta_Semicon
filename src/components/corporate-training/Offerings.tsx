@@ -3,28 +3,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Users, RefreshCw, Laptop } from "lucide-react";
 import { MotionGrid } from "@/components/common/MotionGrid";
 import { MotionItem } from "@/components/common/MotionItem";
+import { AnimatedIcon } from "@/components/common/AnimatedIcon";
 
 const offerings = [
-    {
-        icon: <Users className="h-8 w-8 text-white" />,
-        title: "Customized Training Approach",
-        description: "We design and deliver training modules tailored to your organization's specific needs and project requirements."
-    },
-    {
-        icon: <RefreshCw className="h-8 w-8 text-white" />,
-        title: "Tool-Based Refreshers",
-        description: "Our refresher courses help your teams get up to speed with the latest versions of industry-standard tools and methodologies."
-    },
-    {
-        icon: <Check className="h-8 w-8 text-white" />,
-        title: "Client Interview Preparation",
-        description: "We offer specialized programs to prepare your employees for critical client interviews, ensuring they showcase their skills effectively."
-    },
-    {
-        icon: <Laptop className="h-8 w-8 text-white" />,
-        title: "Flexible Delivery Modes",
-        description: "Choose from onsite, online, or hybrid delivery models to suit your team's location and schedule, minimizing disruption."
-    }
+  {
+    icon: <Users className="h-8 w-8 text-white" />,
+    title: "Customized Training Approach",
+    description: "We design and deliver training modules tailored to your organization's specific needs and project requirements."
+  },
+  {
+    icon: <RefreshCw className="h-8 w-8 text-white" />,
+    title: "Tool-Based Refreshers",
+    description: "Our refresher courses help your teams get up to speed with the latest versions of industry-standard tools and methodologies."
+  },
+  {
+    icon: <Check className="h-8 w-8 text-white" />,
+    title: "Client Interview Preparation",
+    description: "We offer specialized programs to prepare your employees for critical client interviews, ensuring they showcase their skills effectively."
+  },
+  {
+    icon: <Laptop className="h-8 w-8 text-white" />,
+    title: "Flexible Delivery Modes",
+    description: "Choose from onsite, online, or hybrid delivery models to suit your team's location and schedule, minimizing disruption."
+  }
 ];
 
 export default function Offerings() {
@@ -44,7 +45,7 @@ export default function Offerings() {
           <MotionItem key={index}>
             <Card className="bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300 hover:-translate-y-2 h-full">
               <CardHeader className="flex flex-row items-center gap-4">
-                {offering.icon}
+                <AnimatedIcon>{offering.icon}</AnimatedIcon>
                 <CardTitle className="text-xl text-white font-headline font-bold">{offering.title}</CardTitle>
               </CardHeader>
               <CardContent>

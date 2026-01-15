@@ -1,33 +1,35 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Lightbulb, Wrench, MessageSquare, BookOpen } from "lucide-react";
-
+import { AnimatedIcon } from "@/components/common/AnimatedIcon";
+import {MotionGrid} from "@/components/common/MotionGrid";
+import {MotionItem} from "@/components/common/MotionItem";
 const services = [
-    {
-        icon: <Lightbulb className="h-8 w-8 text-primary" />,
-        title: "Project Topic Selection",
-        description: "We help you choose a relevant and impactful project topic that aligns with current industry trends."
-    },
-    {
-        icon: <Wrench className="h-8 w-8 text-primary " />,
-        title: "Tool Environment Setup",
-        description: "Get complete assistance with installing and configuring the necessary software and tools for your project."
-    },
-    {
-        icon: <MessageSquare className="h-8 w-8 text-primary" />,
-        title: "Continuous Mentoring",
-        description: "Receive ongoing guidance and support from industry experts throughout your project lifecycle."
-    },
-    {
-        icon: <CheckCircle className="h-8 w-8 text-primary" />,
-        title: "Debugging & Optimization",
-        description: "Our mentors assist you in troubleshooting issues and optimizing your design for performance."
-    },
-    {
-        icon: <BookOpen className="h-8 w-8 text-primary" />,
-        title: "Documentation & Viva Support",
-        description: "We provide expert help in preparing your project report and getting you ready for your final viva."
-    },
+  {
+    icon: <Lightbulb className="h-8 w-8 text-primary hover:text-white  " />,
+    title: "Project Topic Selection",
+    description: "We help you choose a relevant and impactful project topic that aligns with current industry trends."
+  },
+  {
+    icon: <Wrench className="h-8 w-8 text-primary hover:text-white" />,
+    title: "Tool Environment Setup",
+    description: "Get complete assistance with installing and configuring the necessary software and tools for your project."
+  },
+  {
+    icon: <MessageSquare className="h-8 w-8 text-primary hover:text-white" />,
+    title: "Continuous Mentoring",
+    description: "Receive ongoing guidance and support from industry experts throughout your project lifecycle."
+  },
+  {
+    icon: <CheckCircle className="h-8 w-8 text-primary hover:text-white" />,
+    title: "Debugging & Optimization",
+    description: "Our mentors assist you in troubleshooting issues and optimizing your design for performance."
+  },
+  {
+    icon: <BookOpen className="h-8 w-8 text-primary hover:text-white" />,
+    title: "Documentation & Viva Support",
+    description: "We provide expert help in preparing your project report and getting you ready for your final viva."
+  },
 ];
 
 export default function Services() {
@@ -42,21 +44,27 @@ export default function Services() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+
+     
+
+      <MotionGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <Card key={index} className="text-center border-2 border-red-700 hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
-                {service.icon}
-              </div>
-              <CardTitle className="text-xl font-headline text-foreground">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>{service.description}</p>
-            </CardContent>
-          </Card>
+          <MotionItem key={index}>
+            <Card className="text-center border-2 border-red-700 hover:shadow-lg transition-shadow h-full">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4 hover:bg-red-900">
+                  <AnimatedIcon>{service.icon}</AnimatedIcon>
+                </div>
+                <CardTitle className="text-xl font-headline text-foreground">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{service.description}</p>
+              </CardContent>
+            </Card>
+          </MotionItem>
         ))}
-      </div>
+      </MotionGrid>
     </div>
   );
 }

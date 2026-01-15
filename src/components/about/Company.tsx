@@ -2,13 +2,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionSection } from "@/components/common/MotionSection";
 import { Eye, Goal } from "lucide-react";
-import {Mulish}  from "next/font/google";
+import { Mulish } from "next/font/google";
+import { AnimatedIcon } from "../common/AnimatedIcon";
 
 const mulish = Mulish({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-    variable: "--font-mulish",
-  });
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mulish",
+});
 
 export default function Company() {
   return (
@@ -27,7 +28,7 @@ export default function Company() {
             <MotionSection delay={0.4} direction="left">
               <Card className=" bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex items-center gap-4 ">
-                  <Eye className="h-10 w-10 text-white" />
+                  <AnimatedIcon><Eye className="h-10 w-10 text-white" /></AnimatedIcon>
                   <CardTitle className="text-2xl text-white font-bold m-0 font-Times ">Our Vision</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -40,7 +41,7 @@ export default function Company() {
             <MotionSection delay={0.6} direction="left">
               <Card className=" bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-lg transition-all duration-300">
                 <CardHeader className="flex items-center gap-4 ">
-                  <Goal className="h-10 w-10 text-white" />
+                  <AnimatedIcon><Goal className="h-10 w-10 text-white" /></AnimatedIcon>
                   <CardTitle className="text-2xl text-white font-bold m-0 font-Times ">Our Mission</CardTitle>
                 </CardHeader>
                 <CardContent>

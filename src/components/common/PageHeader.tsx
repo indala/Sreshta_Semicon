@@ -5,7 +5,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
 
 type PageHeaderProps = {
-  title: string;
+  title: string | string[];
   description: string;
   imageId: string;
 };
@@ -24,7 +24,7 @@ export function PageHeader({ title, description, imageId }: PageHeaderProps) {
     })));
   }, []);
 
-  const words = title.split(" ");
+  const lines = Array.isArray(title) ? title : title.split("|");
 
   return (
     <section className="relative h-64 md:h-80 flex items-center justify-center text-center overflow-hidden bg-black">
@@ -79,24 +79,30 @@ export function PageHeader({ title, description, imageId }: PageHeaderProps) {
         ))}
       </div>
 
-      <div className="relative z-20 p-4 text-white">
-        <div className="overflow-hidden flex flex-wrap justify-center gap-x-2 md:gap-x-3">
-          {words.map((word, i) => (
-            <motion.h1
-              key={i}
-              className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-white drop-shadow-2xl"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: [0.215, 0.61, 0.355, 1.0]
-              }}
-            >
-              {word}
-            </motion.h1>
+      <div className="relative z-20 p-4 text-white flex flex-col items-center gap-2">
+        {/* Responsive Container: Stacked on mobile, Row on sm+ */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-0 flex-wrap">
+          {lines.map((line, lineIndex) => (
+            <div key={lineIndex} className="overflow-hidden flex flex-wrap justify-center gap-x-2 md:gap-x-3">
+              {line.trim().split(" ").map((word, wordIndex) => (
+                <motion.h1
+                  key={`${lineIndex}-${wordIndex}`}
+                  className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-white drop-shadow-2xl"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: lineIndex * 0.2 + wordIndex * 0.1,
+                    ease: [0.215, 0.61, 0.355, 1.0]
+                  }}
+                >
+                  {word}
+                </motion.h1>
+              ))}
+            </div>
           ))}
         </div>
+
 
         <motion.p
           className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-200 drop-shadow-md font-medium"
@@ -107,6 +113,6 @@ export function PageHeader({ title, description, imageId }: PageHeaderProps) {
           {description}
         </motion.p>
       </div>
-    </section>
+    </section >
   );
 }

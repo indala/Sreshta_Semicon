@@ -9,7 +9,7 @@ export default function CallToAction() {
   return (
     <section className="py-16 md:py-24 bg-primary text-primary-foreground">
       <MotionSection className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-4">
           Ready to Start Your Career in VLSI?
         </h2>
         <p className="max-w-2xl mx-auto text-lg mb-8 text-gray-200">
@@ -22,11 +22,11 @@ export default function CallToAction() {
             </AnimatedIcon>
             <span>7801009777</span>
           </a>
-          <a href="mailto:sreshtasemicon@gmail.com" className="flex items-center gap-2 hover:underline">
+          <a href="mailto:info@sreshtasemicon.com" className="flex items-center gap-2 hover:underline">
             <AnimatedIcon>
               <Mail className="h-5 w-5" />
             </AnimatedIcon>
-            <span>sreshtasemicon@gmail.com</span>
+            <span>info@sreshtasemicon.com</span>
           </a>
         </div>
         <div className="mt-8">

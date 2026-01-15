@@ -4,6 +4,7 @@ import { Award, BookOpen, Goal } from "lucide-react";
 import { MotionSection } from "@/components/common/MotionSection";
 import { MotionGrid } from "@/components/common/MotionGrid";
 import { MotionItem } from "@/components/common/MotionItem";
+import { AnimatedIcon } from "@/components/common/AnimatedIcon";
 
 const values = [
   {
@@ -35,7 +36,7 @@ export default function Values() {
             <MotionItem key={index}>
               <Card className="bg-gradient-to-br from-red-600 via-red-800 to-[#781511] text-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
                 <CardHeader className="flex flex-row items-center gap-4">
-                  {value.icon}
+                  <AnimatedIcon>{value.icon}</AnimatedIcon>
                   <CardTitle className="text-xl font-bold text-white font-headline">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
